@@ -27,6 +27,7 @@ namespace WindowsFormsApp1
 
         //bilal datetime tipinde bir property oluştur.
 
+
         //esat  decimal Fiyat isminde bir metot oluştur.
 
         //hava 3 farklı property oluştur
@@ -38,5 +39,12 @@ namespace WindowsFormsApp1
         //reyhan herhangi bir metot oluştur.
 
         //şeyma enum oluştur içerisinde admin, kullanıcı ve ziyaretçi olsun.
+
+
+
+        public void Deneme()
+        {
+
+        }
     }
 }
