@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class Emirhan
+    public class Emirhan
     {
+        public int MyProperty { get; set; }
     }
 }
