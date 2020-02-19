@@ -144,6 +144,7 @@
             this.btnConnected.TabIndex = 2;
             this.btnConnected.Text = "Connected";
             this.btnConnected.UseVisualStyleBackColor = true;
+            this.btnConnected.Click += new System.EventHandler(this.btnConnected_Click);
             // 
             // btnDisconnected
             // 
@@ -154,6 +155,7 @@
             this.btnDisconnected.TabIndex = 2;
             this.btnDisconnected.Text = "DisConnected";
             this.btnDisconnected.UseVisualStyleBackColor = true;
+            this.btnDisconnected.Click += new System.EventHandler(this.btnDisconnected_Click);
             // 
             // btnEntityFramework
             // 
@@ -164,6 +166,7 @@
             this.btnEntityFramework.TabIndex = 2;
             this.btnEntityFramework.Text = "Entity Framework";
             this.btnEntityFramework.UseVisualStyleBackColor = true;
+            this.btnEntityFramework.Click += new System.EventHandler(this.btnEntityFramework_Click);
             // 
             // Form1
             // 
