@@ -9,5 +9,11 @@ namespace WindowsFormsApp1
     class deneme
     {
         //cem tarafından olusturuldu.
+
+        int Deger(int deger)
+        {
+            return deger ;
+        }
+
     }
 }
