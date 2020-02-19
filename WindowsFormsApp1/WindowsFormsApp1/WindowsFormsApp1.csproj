@@ -47,13 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="deneme.cs" />
+    <Compile Include="Emirhan.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mert.cs" />
+    <Compile Include="Ihsan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
