@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
     class deneme
     {
+
+
+
+
         //cem tarafından olusturuldu.
 
         //Mert buraya string değer döndüren bir metot yaz.
@@ -19,6 +24,10 @@ namespace WindowsFormsApp1
         //ahmet burada int değer döndüren bir metot yaz.
 
         //ihsan bir metot yaz içinde mesaj kutusunda merhaba yazsın.
+        public void merhaba()
+        {
+            MessageBox.Show("MERHABA");
+        }
 
         //bilal datetime tipinde bir property oluştur.
 
