@@ -43,5 +43,10 @@ namespace WindowsFormsApp1
 
         public int MyProperty { get; set; }//emirhan
 
+        public string Deneme()
+        {
+
+        }
+
     }
 }
