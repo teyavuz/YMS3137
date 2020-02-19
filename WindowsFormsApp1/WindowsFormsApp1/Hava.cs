@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    public class Emirhan
+    class Hava
     {
-        public int MyProperty { get; set; }
+        public string Ad { get; set; }
+        //Class oluşturuldu
     }
 }

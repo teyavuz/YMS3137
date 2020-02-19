@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    public class Emirhan
+    public class Mert
     {
-        public int MyProperty { get; set; }
+        string mesaj(string deger)
+        {
+            return deger;
+        }
     }
 }
