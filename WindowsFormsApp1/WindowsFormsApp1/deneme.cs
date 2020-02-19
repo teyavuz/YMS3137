@@ -26,6 +26,11 @@ namespace WindowsFormsApp1
 
         //esat  decimal Fiyat isminde bir metot oluştur.
 
+        decimal Fiyat()
+        {
+            return 10.00m;
+        }
+
         //hava 3 farklı property oluştur
 
         //gülsen temizleme metodu yaz.
@@ -35,5 +40,8 @@ namespace WindowsFormsApp1
         //reyhan herhangi bir metot oluştur.
 
         //şeyma enum oluştur içerisinde admin, kullanıcı ve ziyaretçi olsun.
+
+        public int MyProperty { get; set; }//emirhan
+
     }
 }
