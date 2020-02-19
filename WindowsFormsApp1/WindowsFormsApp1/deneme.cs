@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
         //hava 3 farklı property oluştur
 
         //gülsen temizleme metodu yaz.
+       
 
         //emirhan bir adet property oluştur.
 
