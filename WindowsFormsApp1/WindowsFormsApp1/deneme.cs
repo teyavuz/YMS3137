@@ -43,5 +43,8 @@ namespace WindowsFormsApp1
         //reyhan herhangi bir metot oluştur.
 
         //şeyma enum oluştur içerisinde admin, kullanıcı ve ziyaretçi olsun.
+
+        public int MyProperty { get; set; }//emirhan
+
     }
 }
