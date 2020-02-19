@@ -16,6 +16,10 @@ namespace WindowsFormsApp1
         //cem tarafından olusturuldu.
 
         //Mert buraya string değer döndüren bir metot yaz.
+        string mesaj(string deger)
+        {
+            return deger;
+        }
 
         //ahmet burada int değer döndüren bir metot yaz.
 
