@@ -1,0 +1,12 @@
+//Ödev
+
+Adımlar:
+
+	1-Classic Movie Theaters Normalized isimli excel tablosunu veritabanı haline getirip örnek verileri içerisine tanımlayın.
+	2-Yeni bir WFA projesi oluşturun. daha önce taımladığınız veritabanını (yukarıdaki Movie) DbFirst yaklaşımını kullanarak projeye dahil edin.
+	3-Her bir tablo için Ekleme, silme ve güncelleme işlemlerini uygulayın.
+		Örn. 
+			*Yeni film ekleme, film güncelleme, film silme
+			*Yeni salon ekleme, salon güncelleme, salon silme,
+			*Yeni Gösterim ekleme, gösterim güncelleme, silme vs..
+---------------------------------------------------------------------------------------------------------------------------
