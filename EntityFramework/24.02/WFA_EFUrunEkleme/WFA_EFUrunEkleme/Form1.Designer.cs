@@ -110,6 +110,7 @@
             this.btnKaydet.TabIndex = 1;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // txtUrunAd
             // 
@@ -201,6 +202,7 @@
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(326, 29);
             this.txtAra.TabIndex = 2;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             // 
             // rbArtan
             // 
@@ -213,6 +215,7 @@
             this.rbArtan.TabStop = true;
             this.rbArtan.Text = "Fiyata Göre Artan";
             this.rbArtan.UseVisualStyleBackColor = true;
+            this.rbArtan.CheckedChanged += new System.EventHandler(this.rbArtan_CheckedChanged);
             // 
             // rbAzalan
             // 
@@ -225,6 +228,7 @@
             this.rbAzalan.TabStop = true;
             this.rbAzalan.Text = "Fiyata Göre Azalan";
             this.rbAzalan.UseVisualStyleBackColor = true;
+            this.rbAzalan.CheckedChanged += new System.EventHandler(this.rbAzalan_CheckedChanged);
             // 
             // Form1
             // 
