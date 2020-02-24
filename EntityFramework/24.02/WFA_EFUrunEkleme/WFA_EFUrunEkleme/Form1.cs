@@ -16,5 +16,14 @@ namespace WFA_EFUrunEkleme
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //DbFirst kullanarak Northwind veritabanı yansımasını projeye dahil ediniz.
+
+            //Formu kullanarak yeni bir ürün ekleyin.
+
+           
+        }
     }
 }
