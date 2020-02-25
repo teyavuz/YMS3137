@@ -23,6 +23,7 @@ namespace WFA_CodeFirst.ORM.Context
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products{ get; set; }
+        public DbSet<AppUser> Users { get; set; }
 
 
     }

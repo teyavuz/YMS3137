@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ORM\Context\ProjectContext.cs" />
+    <Compile Include="ORM\Entity\AppUser.cs" />
     <Compile Include="ORM\Entity\BaseEntity.cs" />
     <Compile Include="ORM\Entity\Category.cs" />
     <Compile Include="ORM\Entity\Product.cs" />

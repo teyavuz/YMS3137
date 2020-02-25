@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.ComponentModel.DataAnnotations;
 namespace WFA_CodeFirst.ORM.Entity
 {
-   public class Product:BaseEntity
+    public class Product:BaseEntity
     {
         //public int ID { get; set; }
         //public string ProductName { get; set; }
+        [Required]
         public decimal UnitPrice { get; set; }
+        [Required]
         public short UnitsInStock { get; set; }
 
     }
