@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rbAzalan = new System.Windows.Forms.RadioButton();
-            this.rbArtan = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbTedarikci = new System.Windows.Forms.ComboBox();
@@ -43,7 +40,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtUrunAd = new System.Windows.Forms.TextBox();
             this.btnKaydet = new System.Windows.Forms.Button();
-            this.txtAra = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -55,40 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudFiyat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStok)).BeginInit();
             this.SuspendLayout();
-            // 
-            // rbAzalan
-            // 
-            this.rbAzalan.AutoSize = true;
-            this.rbAzalan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rbAzalan.Location = new System.Drawing.Point(881, 35);
-            this.rbAzalan.Name = "rbAzalan";
-            this.rbAzalan.Size = new System.Drawing.Size(163, 24);
-            this.rbAzalan.TabIndex = 13;
-            this.rbAzalan.TabStop = true;
-            this.rbAzalan.Text = "Fiyata Göre Azalan";
-            this.rbAzalan.UseVisualStyleBackColor = true;
-            // 
-            // rbArtan
-            // 
-            this.rbArtan.AutoSize = true;
-            this.rbArtan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rbArtan.Location = new System.Drawing.Point(722, 35);
-            this.rbArtan.Name = "rbArtan";
-            this.rbArtan.Size = new System.Drawing.Size(153, 24);
-            this.rbArtan.TabIndex = 14;
-            this.rbArtan.TabStop = true;
-            this.rbArtan.Text = "Fiyata Göre Artan";
-            this.rbArtan.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(294, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 24);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Ürün Ara:";
             // 
             // groupBox1
             // 
@@ -215,14 +177,6 @@
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = true;
             // 
-            // txtAra
-            // 
-            this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAra.Location = new System.Drawing.Point(390, 32);
-            this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(326, 29);
-            this.txtAra.TabIndex = 9;
-            // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -235,9 +189,9 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(298, 74);
+            this.listView1.Location = new System.Drawing.Point(294, 27);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(712, 364);
+            this.listView1.Size = new System.Drawing.Size(716, 411);
             this.listView1.TabIndex = 15;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -275,13 +229,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 590);
+            this.ClientSize = new System.Drawing.Size(1068, 460);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.rbAzalan);
-            this.Controls.Add(this.rbArtan);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtAra);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -290,15 +240,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudFiyat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStok)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RadioButton rbAzalan;
-        private System.Windows.Forms.RadioButton rbArtan;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbTedarikci;
@@ -311,7 +256,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtUrunAd;
         private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
