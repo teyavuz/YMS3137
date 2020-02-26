@@ -176,6 +176,7 @@
             this.btnKaydet.TabIndex = 1;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // listView1
             // 

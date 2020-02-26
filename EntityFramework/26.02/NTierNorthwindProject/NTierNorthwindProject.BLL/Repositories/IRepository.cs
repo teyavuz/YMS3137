@@ -16,7 +16,7 @@ namespace NTierNorthwindProject.BLL.Repositories
         List<T> SelectAll();//List<T>=> List<Category>
         T SelectById(int id);//T=> Category
 
-
+        //int GetById(int id);
 
     }
 }

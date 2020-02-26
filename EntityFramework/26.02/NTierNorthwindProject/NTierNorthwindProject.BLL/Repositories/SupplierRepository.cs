@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace NTierNorthwindProject.BLL.Repositories
 {
-    public class ProductRepository : IRepository<Product>
+    public class SupplierRepository : IRepository<Supplier>
     {
         NorthwindEntities db = new NorthwindEntities();
-        public void Add(Product item)
+        public void Add(Supplier item)
         {
-            db.Products.Add(item);
-            db.SaveChanges();
+            throw new NotImplementedException();
         }
 
         public void Delete(int id)
@@ -21,17 +20,17 @@ namespace NTierNorthwindProject.BLL.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Product> SelectAll()
+        public List<Supplier> SelectAll()
         {
-            throw new NotImplementedException();
+            return db.Suppliers.ToList();
         }
 
-        public Product SelectById(int id)
+        public Supplier SelectById(int id)
         {
-            throw new NotImplementedException();
+            return db.Suppliers.Find(id);
         }
 
-        public void Update(Product item)
+        public void Update(Supplier item)
         {
             throw new NotImplementedException();
         }

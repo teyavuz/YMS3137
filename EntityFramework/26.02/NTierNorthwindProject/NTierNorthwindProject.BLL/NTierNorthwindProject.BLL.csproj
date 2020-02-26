@@ -53,6 +53,7 @@
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\Service\CategoryService.cs" />
+    <Compile Include="Repositories\SupplierRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NTierNorthwindProject.DAL\NTierNorthwindProject.DAL.csproj">
