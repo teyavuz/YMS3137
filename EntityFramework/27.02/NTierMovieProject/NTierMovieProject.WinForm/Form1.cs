@@ -39,7 +39,7 @@ namespace NTierMovieProject.WinForm
                 lvi.SubItems.Add(movie.ReleaseDate.ToShortDateString());
                 lvi.SubItems.Add(movie.Duration.ToString());
                 lvi.SubItems.Add(movie.MovieLanguage);
-
+                lvi.Tag = movie;
                 listView1.Items.Add(lvi);
             }
         }
@@ -49,6 +49,16 @@ namespace NTierMovieProject.WinForm
             Form2 frm = new Form2();
             frm.Show();
             this.Hide();
+
+        }
+        Movie movie;
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            movie = (Movie)listView1.SelectedItems[0].Tag;
+            lblSure.Text = movie.Duration.ToString();
+            lblCikisTarihi.Text = movie.ReleaseDate.ToShortDateString();
+            lblDil.Text = movie.MovieLanguage;
+            pictureBox1.ImageLocation = Application.StartupPath + "/Images/" + movie.MoviePosterPath;
 
         }
     }
