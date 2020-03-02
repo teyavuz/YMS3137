@@ -18,10 +18,36 @@ namespace NTierMovieProject.WinForm
         {
             InitializeComponent();
         }
-        BaseRepository<Movie> movies = new BaseRepository<Movie>();
+        BaseRepository<Movie> movieRepo = new BaseRepository<Movie>();
+        BaseRepository<Actor> actorRepo = new BaseRepository<Actor>();
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = movies.SelectAll();
+            
+        }
+
+        private void btnMovie_Click(object sender, EventArgs e)
+        {
+            //var movie = movieRepo.SelectById(2).MovieName;
+
+            //MessageBox.Show(movie);
+
+            foreach (Movie movie in movieRepo.SelectAll())
+            {
+                ListViewItem lvi = new ListViewItem();
+                lvi.Text = movie.MovieName;
+                lvi.SubItems.Add(movie.ReleaseDate.ToShortDateString());
+                lvi.SubItems.Add(movie.Duration.ToString());
+                lvi.SubItems.Add(movie.MovieLanguage);
+
+                listView1.Items.Add(lvi);
+            }
+        }
+
+        private void btnAddMovie_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.Show();
+            this.Hide();
         }
     }
 }
