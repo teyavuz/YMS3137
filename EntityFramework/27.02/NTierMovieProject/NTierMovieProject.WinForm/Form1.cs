@@ -22,7 +22,8 @@ namespace NTierMovieProject.WinForm
         BaseRepository<Actor> actorRepo = new BaseRepository<Actor>();
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+           
+           
         }
 
         private void btnMovie_Click(object sender, EventArgs e)

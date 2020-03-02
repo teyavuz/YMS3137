@@ -36,8 +36,27 @@ namespace NTierMovieProject.WinForm
                 ReleaseDate = dateTimePicker1.Value
 
             };
+            if (pictureBox1.Tag != null)
+            {
+                movie.MoviePosterPath = Guid.NewGuid() + pictureBox1.Tag.ToString();
+
+                pictureBox1.Image.Save(Application.StartupPath + "/Images/" + movie.MoviePosterPath);
+            }
             movies.Add(movie);
             MessageBox.Show("movie added :) ");
+        }
+
+        private void btnImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Movie Picture(png,jpg,gif)|*.png;*.jpg;*.gif";
+            DialogResult dr = ofd.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                //MessageBox.Show("Görsel Seçildi");
+                pictureBox1.Image = Image.FromFile(ofd.FileName);
+                pictureBox1.Tag = System.IO.Path.GetExtension(ofd.FileName);
+            }
         }
     }
 }
