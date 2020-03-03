@@ -43,6 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISP\BAD\BadChicken.cs" />
+    <Compile Include="ISP\BAD\BadHawk.cs" />
+    <Compile Include="ISP\BAD\IBird.cs" />
+    <Compile Include="ISP\Validate\Abstract\IFlightlessBird.cs" />
+    <Compile Include="ISP\Validate\Abstract\IFliyingBird.cs" />
+    <Compile Include="ISP\Validate\Concrete\Chicken.cs" />
+    <Compile Include="ISP\Validate\Concrete\Hawk.cs" />
     <Compile Include="LSP\Bad\BadAreaCalculator.cs" />
     <Compile Include="LSP\Bad\BadRectangle.cs" />
     <Compile Include="LSP\Bad\BadSquare.cs" />
