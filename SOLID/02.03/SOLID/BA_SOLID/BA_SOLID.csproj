@@ -43,6 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DIP\BAD\BadFish.cs" />
+    <Compile Include="DIP\BAD\BadPoultry.cs" />
+    <Compile Include="DIP\BAD\BadRestaurant.cs" />
+    <Compile Include="DIP\Validate\Abstract\IProduct.cs" />
+    <Compile Include="DIP\Validate\Concrete\Fish.cs" />
+    <Compile Include="DIP\Validate\Concrete\Poultry.cs" />
+    <Compile Include="DIP\Validate\Concrete\Restaurant.cs" />
     <Compile Include="ISP\BAD\BadChicken.cs" />
     <Compile Include="ISP\BAD\BadHawk.cs" />
     <Compile Include="ISP\BAD\IBird.cs" />

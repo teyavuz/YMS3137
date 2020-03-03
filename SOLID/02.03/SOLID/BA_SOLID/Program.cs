@@ -1,4 +1,6 @@
-﻿using BA_SOLID.LSP.Bad;
+﻿using BA_SOLID.DIP.Validate.Abstract;
+using BA_SOLID.DIP.Validate.Concrete;
+using BA_SOLID.LSP.Bad;
 using BA_SOLID.LSP.Validate;
 using BA_SOLID.OCP.Validate.Abstract;
 using BA_SOLID.OCP.Validate.Concrete;
@@ -83,14 +85,35 @@ namespace BA_SOLID
             //} 
             #endregion
 
-            Rectangle rectangle = new Rectangle();
-            rectangle.Width = 2;
-            rectangle.Height = 3;
+            //Rectangle rectangle = new Rectangle();
+            //rectangle.Width = 2;
+            //rectangle.Height = 3;
 
-            if (rectangle.RectangleArea() != 6)
-            {
+            //if (rectangle.RectangleArea() != 6)
+            //{
 
-            }
+            //}
+
+            //DIP=> Dependency Inversion Principle
+            //Üst seviye sınıflar alt seviye sınıflara bağımlı olmamalıdır.
+
+
+            Fish barbun = new Fish();
+            barbun.GetCookingInstructions();
+
+            Fish tuna = new Fish();
+            tuna.GetCookingInstructions();
+
+            Poultry poultry = new Poultry();
+            poultry.GetCookingInstructions();
+
+            List<IProduct> products = new List<IProduct>();
+            products.Add(barbun);
+            products.Add(tuna);
+            products.Add(poultry);
+
+            Restaurant restaurant = new Restaurant(products);
+            restaurant.GenerateInstructions();
         }
     }
 }
