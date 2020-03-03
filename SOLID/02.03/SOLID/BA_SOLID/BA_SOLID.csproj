@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LSP\Bad\BadAreaCalculator.cs" />
+    <Compile Include="LSP\Bad\BadRectangle.cs" />
+    <Compile Include="LSP\Bad\BadSquare.cs" />
+    <Compile Include="LSP\Validate\Rectangle.cs" />
+    <Compile Include="LSP\Validate\Shape.cs" />
+    <Compile Include="LSP\Validate\Square.cs" />
     <Compile Include="OCP\Bad\BadCoffee.cs" />
     <Compile Include="OCP\Validate\Abstract\GoodCoffee.cs" />
     <Compile Include="OCP\Validate\Concrete\Americano.cs" />

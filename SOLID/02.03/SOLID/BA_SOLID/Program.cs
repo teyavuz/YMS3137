@@ -1,4 +1,6 @@
-﻿using BA_SOLID.OCP.Validate.Abstract;
+﻿using BA_SOLID.LSP.Bad;
+using BA_SOLID.LSP.Validate;
+using BA_SOLID.OCP.Validate.Abstract;
 using BA_SOLID.OCP.Validate.Concrete;
 using BA_SOLID.SRP.BAD;
 using BA_SOLID.SRP.Model;
@@ -46,15 +48,49 @@ namespace BA_SOLID
             //Console.Read(); 
             #endregion
 
-            GoodCoffee kahve1 = new Americano();
-            GoodCoffee kahve2 = new Latte();
-            GoodCoffee kahve3 = new Mocha();
+            #region OCP
+            //GoodCoffee kahve1 = new Americano();
+            //GoodCoffee kahve2 = new Latte();
+            //GoodCoffee kahve3 = new Mocha();
 
-            decimal price = 0;
-            price=kahve1.GetTotalPrice(2);
-            Console.WriteLine(price.ToString());
-            Console.ReadLine();
+            //decimal price = 0;
+            //price=kahve1.GetTotalPrice(2);
+            //Console.WriteLine(price.ToString());
+            //Console.ReadLine(); 
+            #endregion
 
+            //LSP=> Liskov's Substution Principle
+
+            //Bir sınıftan türetilen sınıflar, base sınıfın yerine de kullanabilmelidir.
+
+
+            #region LSP BAD
+            //BadRectangle rectangle = new BadRectangle();
+            //rectangle.Width = 2;
+            //rectangle.Height = 3;
+
+            //if (BadAreaCalculator.CalculateArea(rectangle) != 6)
+            //{
+            //    Console.WriteLine("Dörtgen alan hesaplamasında hatalı işlem");
+            //}
+
+            //BadSquare square = new BadSquare();
+            //square.Height = 3;
+
+            //if (BadAreaCalculator.CalculateArea(square) != 9)
+            //{
+            //    Console.WriteLine("Kare hesaplamasında hatalı işlem");
+            //} 
+            #endregion
+
+            Rectangle rectangle = new Rectangle();
+            rectangle.Width = 2;
+            rectangle.Height = 3;
+
+            if (rectangle.RectangleArea() != 6)
+            {
+
+            }
         }
     }
 }
