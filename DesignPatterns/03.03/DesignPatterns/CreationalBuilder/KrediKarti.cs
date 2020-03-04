@@ -13,5 +13,9 @@ namespace CreationalBuilder
         public decimal KartLimit { get; set; }
         public bool Taksit { get; set; }
 
+        public override string ToString()
+        {
+            return $"{BankaAdi} bankasına ait müşteri {KartTipi} ni kullanmakta ve {KartLimit} limi vardır ayrıca taksit imkanı ise: {Taksit}";
+        }
     }
 }

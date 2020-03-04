@@ -10,7 +10,12 @@ namespace CreationalBuilder
     {
         static void Main(string[] args)
         {
+            KrediKartiBuilder gercekKart = new AmericanExpressConcreteBuilder();
+            KrediKartiKullan kullan = new KrediKartiKullan();
+            kullan.KartKullan(gercekKart);
 
+            Console.WriteLine(gercekKart.Kart.ToString());
+            Console.Read();
         }
     }
 }
