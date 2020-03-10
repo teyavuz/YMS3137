@@ -1,0 +1,9 @@
+--Bir sayfa oluşturun. sayfa içerisinde;
+	--Tablo olarak Northwind=> Product tablosunu oluşturun.
+	--Tablo olarak Northwind=> Employee tablosunu oluşturun.
+
+--Kategoriler için liste tanımlayın.
+
+---------------------------------------
+sayfanın header alanı içerisinde Product, category, employee,customer, order, order detail, supplier
+
