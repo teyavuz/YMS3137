@@ -1,0 +1,10 @@
+﻿.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    /*background-color: #4d1c94;*/
+    background-image: url('https://pngimage.net/wp-content/uploads/2018/06/flat-background-png-3.png')
+    /*background-image:linear-gradient(#0094ff,#730cba)*/
+
+}
