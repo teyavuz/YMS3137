@@ -1,0 +1,68 @@
+﻿body {
+    /*background-color:darkslateblue;*/
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*background-image:url(/Content/images/wallhaven-vgr1ml.jpg)*/
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    line-height: 120px;
+}
+
+#main-container {
+    width: 1080px;
+    height: auto;
+    /*background-color:black;*/
+}
+
+#header {
+    width: 1080px;
+    height: 120px;
+    background-color: aquamarine;
+    /*margin-left:15px;*/
+    /*margin:25px 15px 15px 15px;*/
+    border-radius: 50px 50px 0 0;
+}
+
+#content {
+    width: 580px;
+    height: 630px;
+    background-color: antiquewhite;
+    float: left;
+}
+
+.menu {
+    width: 250px;
+    height: 630px;
+    background-color: fuchsia;
+    float: left;
+}
+
+#footer {
+    width: 1080px;
+    height: 120px;
+    background-color: orangered;
+    float: left;
+    border-radius: 0 0 50px 50px;
+}
+
+.menu p {
+    color: antiquewhite;
+    text-align: center;
+    line-height: 630px;
+    font-size: 24px;
+}
+
+#content h2 {
+    color: darkslategrey;
+    text-align: center;
+    line-height: 630px;
+}
+
+#footer h3 {
+    color: #411b93;
+    text-align: center;
+    line-height: 100px;
+}
