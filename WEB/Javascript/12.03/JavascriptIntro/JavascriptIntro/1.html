@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Samples</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script>
+       function Degistir() {
+            //getElementById()=> body içerisinde tanımlı olan bir id'i seçmemize olanak sağlar.
+            //InnerHtml=> seçili olan elementin içerisine HTML kodu göndermemizi sağlar.
+            //InnerText=> Seçili olan elementin içerisine Text göndermemizi sağlar.
+            document.getElementById('demo').innerHTML = 'Javascript Dersleri';
+            //console.log('Merhaba');
+          
+        }
+        //Javascriptte tip tanımlaması yapmadan parametreye değer göndermeliyiz.
+        function MesajVer(deger) {
+            var deger2 = "değerin kendisi";
+            document.getElementById('demo').innerHTML = deger2;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:50px;">
+            <figure>
+                <pre>
+                    <span id="demo">Buraya yazı gelecek.</span>
+
+                </pre>
+            </figure>
+            <button class="btn btn-default" onclick="Degistir()">Tıkla!</button>
+            <button class="btn btn-primary" onclick="MesajVer('Selam!')">Mesaj Ver!</button>
+            <button class="btn btn-warning" onclick="MesajVer()">Mesaj Ver 2</button>
+        </div>
+    </div>
+</body>
+</html>

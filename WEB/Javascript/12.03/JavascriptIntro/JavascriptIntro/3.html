@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script>
+        function MailOlustur() {
+            var ad = document.getElementById('ad').value;
+            var soyad = document.getElementById('soyad').value;
+
+            var mail = ad + '.' + soyad + '@gmail.com';
+            document.getElementById('demo').innerHTML = mail;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:50px;">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Ad:</label>
+                    <input id="ad" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Soyad:</label>
+                    <input id="soyad" type="text" class="form-control" />
+                </div>
+                <button class="btn btn-block btn-primary" onclick="MailOlustur()">Mail Oluştur</button>
+            </div>
+            <div class="col-md-8">
+                <figure>
+                    <pre>
+                    <span id="demo"></span>
+
+                </pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

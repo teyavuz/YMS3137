@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script>
+        var doluMu = true;
+        function ResmiDegistir() {
+            if (doluMu) {
+                var copKutusu = document.getElementById('copKutusu')
+               
+                copKutusu.src = "Content/images/empty-trash.png";
+                copKutusu.title="Boş Çöp Kutusu"
+                doluMu = false;
+            } else {
+                var copKutusu = document.getElementById('copKutusu')
+               
+                copKutusu.src = "Content/images/full-trash.jpg";
+                doluMu = true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="/Content/images/full-trash.jpg" id="copKutusu" title="Dolu Çöp Kutusu" onclick="ResmiDegistir()" />
+        </div>
+    </div>
+</body>
+</html>
