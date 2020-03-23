@@ -1,0 +1,5 @@
+--Cumartesi günü için test ortamı hazırlanması
+--Pazartesi için genel tekrar
+--Jquery örneği
+--Turgay not girişi
+--Oğuz not girişi
