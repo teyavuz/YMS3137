@@ -46,6 +46,9 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbTedarikci = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFiyat)).BeginInit();
@@ -59,14 +62,16 @@
             this.groupBox1.Controls.Add(this.nudFiyat);
             this.groupBox1.Controls.Add(this.nudStok);
             this.groupBox1.Controls.Add(this.txtUrunAd);
+            this.groupBox1.Controls.Add(this.cmbTedarikci);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(469, 167);
+            this.groupBox1.Size = new System.Drawing.Size(470, 209);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Ekleme Paneli";
@@ -85,7 +90,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(28, 68);
+            this.label2.Location = new System.Drawing.Point(28, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 20);
             this.label2.TabIndex = 0;
@@ -95,7 +100,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(28, 99);
+            this.label3.Location = new System.Drawing.Point(28, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 0;
@@ -105,7 +110,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(28, 132);
+            this.label4.Location = new System.Drawing.Point(28, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 20);
             this.label4.TabIndex = 0;
@@ -124,7 +129,7 @@
             // txtUrunAd
             // 
             this.txtUrunAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtUrunAd.Location = new System.Drawing.Point(133, 65);
+            this.txtUrunAd.Location = new System.Drawing.Point(133, 87);
             this.txtUrunAd.Name = "txtUrunAd";
             this.txtUrunAd.Size = new System.Drawing.Size(160, 26);
             this.txtUrunAd.TabIndex = 2;
@@ -132,7 +137,12 @@
             // nudStok
             // 
             this.nudStok.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.nudStok.Location = new System.Drawing.Point(133, 94);
+            this.nudStok.Location = new System.Drawing.Point(133, 116);
+            this.nudStok.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudStok.Name = "nudStok";
             this.nudStok.Size = new System.Drawing.Size(160, 26);
             this.nudStok.TabIndex = 3;
@@ -140,37 +150,45 @@
             // nudFiyat
             // 
             this.nudFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.nudFiyat.Location = new System.Drawing.Point(133, 127);
+            this.nudFiyat.Location = new System.Drawing.Point(133, 149);
+            this.nudFiyat.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudFiyat.Name = "nudFiyat";
             this.nudFiyat.Size = new System.Drawing.Size(160, 26);
             this.nudFiyat.TabIndex = 3;
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(343, 29);
+            this.btnKaydet.Location = new System.Drawing.Point(323, 29);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(123, 23);
             this.btnKaydet.TabIndex = 4;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(343, 58);
+            this.btnGuncelle.Location = new System.Drawing.Point(323, 58);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(123, 23);
             this.btnGuncelle.TabIndex = 4;
             this.btnGuncelle.Text = "GÜNCELLE";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(343, 87);
+            this.btnSil.Location = new System.Drawing.Point(323, 87);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(123, 23);
             this.btnSil.TabIndex = 4;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // listView1
             // 
@@ -179,24 +197,27 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(6, 173);
+            this.listView1.Location = new System.Drawing.Point(12, 228);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(463, 239);
+            this.listView1.Size = new System.Drawing.Size(686, 239);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 103;
+            this.columnHeader1.Width = 41;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Ürün Adı";
-            this.columnHeader2.Width = 92;
+            this.columnHeader2.Width = 155;
             // 
             // columnHeader3
             // 
@@ -209,12 +230,37 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Kategori";
+            this.columnHeader5.Width = 133;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Tedarikçi";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(28, 66);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 20);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Tedarikçi";
+            // 
+            // cmbTedarikci
+            // 
+            this.cmbTedarikci.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTedarikci.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbTedarikci.FormattingEnabled = true;
+            this.cmbTedarikci.Location = new System.Drawing.Point(133, 58);
+            this.cmbTedarikci.Name = "cmbTedarikci";
+            this.cmbTedarikci.Size = new System.Drawing.Size(160, 28);
+            this.cmbTedarikci.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 486);
+            this.ClientSize = new System.Drawing.Size(765, 496);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -248,6 +294,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ComboBox cmbTedarikci;
+        private System.Windows.Forms.Label label5;
     }
 }
 
