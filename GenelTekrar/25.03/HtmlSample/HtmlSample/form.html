@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Form Etiketi</title>
+    <style>
+        /*form{
+            background-color:crimson;
+        }*/
+        /*#personelForm1{
+            background-color:crimson;
+        }
+        #personalForm2{
+            background-color:green;
+        }
+        .txt{
+            background-color:gray;
+        }*/
+
+    </style>
+    <link href="Content/Css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <!--CSS-->
+    <!--
+        1-Inline Css
+        2-Internal Css
+        3-External Css
+    -->
+    <div>
+        <form action="/contact.html" id="personelForm1">
+            <fieldset>
+                <legend>
+                    Personal Information:
+                </legend>
+                FirstName:
+                <br />
+                <input type="text" class="txt" name="firstname" placeholder="enter your name" />
+                <br />
+                LastName:
+                <br />
+                <input type="text" class="txt" name="lastname"  placeholder="enter your surname"/>
+            </fieldset>
+            <button type="submit">Formu Gönder</button>
+        </form>
+    </div>
+    <hr />
+    <div>
+        <form id="personalForm2">
+            <fieldset>
+                <legend>
+                    Personel Information 2:
+                </legend>
+                <input type="text" name="firstName" placeholder="enter your name" />
+                <br />
+                <input type="text" name="lastName" placeholder="enter your surname" />
+            </fieldset>
+            <fieldset>
+                <legend>
+                    Personel Details
+                </legend>
+                Age:<br />
+                <input type="number" name="age" />
+                Personel No:
+                <input type="number" name="personelNo" />
+            </fieldset>
+            <input type="button" value="Gönder" />
+        </form>
+    </div>
+
+
+</body>
+</html>
