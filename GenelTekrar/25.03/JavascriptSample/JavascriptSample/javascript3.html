@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript 3</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script>
+        window.onload = function () {
+            //result isimli id'i değişkene atama.
+            var result = document.getElementById('result');
+
+            //javascript dizi oluşturma
+            var sehirler = ['İstanbul', 'ankara', 'izmir', 'manisa']
+
+            //btn1 tıklandığında bir fonksiyon atayabiliriz.
+
+            document.getElementById('btn1').onclick = function () {
+                result.innerHTML = sehirler.length;
+
+            }
+
+            document.getElementById('btn2').onclick = function () {
+                if (sehirler.includes('ankara')) {
+                    result.innerHTML = "ankara dizi içierisinde mevcut";
+                } else {
+                    result.innerHTML = "ankara dizi içerisinde mevcut değil";
+                }
+            }
+            var cities = ['Paris', 'Londra'];
+            //Concat=> iki diziyi birleştirerek bir kopyasını teslim eder.
+            this.document.getElementById('btn3').onclick = function () {
+                var sehirlerAndCities = sehirler.concat(cities);
+                result.innerHTML = sehirlerAndCities;
+
+            }
+            //entries=> dizi içerisindeki elemanları teslim eder. her bir elemana ulaşabilmek için kullanılır.
+            var sonraki = sehirler.entries();
+            this.document.getElementById('btn4').onclick = function () {
+                var item = sonraki.next().value;
+                if (item != undefined) {
+                    result.innerHTML = item;
+                } else {
+                    result.innerHTML = "dizinin elemanları bitti";
+                }
+
+            }
+            //Foreach
+            this.document.getElementById('btn5').onclick = function () {
+                sehirler.forEach(function (value, index) {
+                    alert(value + " " + index);
+                })
+            }
+            //Pop=> dizinin en son elemanından silme işlemi yapar.
+            this.document.getElementById('btn6').onclick = function () {
+                var item = sehirler.pop();
+                result.innerHTML = item;
+                console.log(item);
+                console.log(sehirler);
+            }
+
+            //Shift=>dizinin ilk elemanından başlayarak silme işlemini gerçekleştirir.
+            this.document.getElementById('btn7').onclick = function () {
+                if (sehirler.length > 0) {
+                    var item = sehirler.shift();
+                    console.log(item);
+                    console.log(sehirler);
+                    result.innerHTML = item;
+                }
+            }
+
+            //Push=> diziye eleman eklemek için kullanılır (dizinin en sonuna eleman ekler)
+            this.document.getElementById('btn8').onclick = function () {
+                sehirler.push('Eskişehir');
+                alert('Eskişehir diziye eklendi');
+                result.innerHTML = sehirler;
+            }
+            //Unshift=>diziye eleman eklemek için kullanılır (dizinin en başından eleman ekler)
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="btn-group" role="group">
+                <button class="btn btn-default" id="btn1">length</button>
+                <button class="btn btn-default" id="btn2">includes</button>
+                <button class="btn btn-default" id="btn3">concat</button>
+                <button class="btn btn-default" id="btn4">entries</button>
+                <button class="btn btn-default" id="btn5">forEach</button>
+                <button class="btn btn-default" id="btn6">Pop</button>
+                <button class="btn btn-default" id="btn7">Shift</button>
+                <button class="btn btn-default" id="btn8">Push</button>
+            </div>
+            <figure>
+                <pre id="result">
+
+                </pre>
+            </figure>
+        </div>
+    </div>
+</body>
+</html>

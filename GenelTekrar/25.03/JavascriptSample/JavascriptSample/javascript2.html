@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script>
+       
+        function Message(x) {
+            //document.getElementById('demo').innerText = x;
+            //innerText=içerisine sadece string değer alır.
+            //innerHTML=içerisine hem string değer hem de HTML etiketlerini alır.
+            document.getElementById('demo').innerHTML="<b>Burası kalın harflerle yazıldı.</b>"
+        }
+
+        function Hesapla(s1,s2) {
+            var sayi1 = parseInt(s1);
+            var sayi2 = parseInt(s2);
+            var toplam = sayi1 + sayi2;
+            document.getElementById('demo').innerText = toplam;
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <figure>
+                <pre>
+<span id="demo">
+
+</span>
+</pre>
+            </figure>
+            <button class="btn btn-default" onclick="Message('Bilge adam javascript dersleri')">Tıkla!</button>
+            <button class="btn btn-primary" onclick="Hesapla(10,5)">Hesapla</button>
+        </div>
+    </div>
+</body>
+</html>
