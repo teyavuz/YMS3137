@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Sample</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script>
+        //window.onload=> sayfa yüklendiğinde çalışması gereken kodları içerir. Windows Forms Application'da 'Form_Load' metodunun karşılığı olarak düşünülebilir.
+        //window.onload = function () {
+        //    var toplam = document.getElementById('result');
+        //    document.getElementById('btnTopla').onclick = function () {
+        //        var sayi1 = document.getElementById('sayi1').value;
+        //        var sayi2 = document.getElementById('sayi2').value;
+
+        //        toplam.innerText = parseInt(sayi1) + parseInt(sayi2);
+        //    }
+        //}
+
+        $(document).ready(function () {
+            
+        })
+    </script>
+</head>
+<body>
+
+    <!--2 adet input tanımlayın. inputlara girilen değerleri toplatarak farklı bir span içerisinde toplam sonucu yazdırın.-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Sayı 1</label>
+                    <input id="sayi1" type="text" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Sayı 2</label>
+                    <input id="sayi2" type="text" class="form-control" />
+                </div>
+                <button class="btn btn-primary" id="btnTopla">Topla</button>
+            </div>
+            <div class="col-lg-6">
+                <figure>
+                    <pre>
+<span id="result">
+
+</span>
+</pre>
+                </figure>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
