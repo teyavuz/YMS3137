@@ -1,0 +1,20 @@
+﻿#onizlemeler img{
+    width:10%;
+    height:10%;
+
+}
+
+#onizlemeler img:hover{
+    box-shadow:0 0 30px rgb(43,127,243);
+}
+
+#buyukGorsel{
+    width:400px;
+    height:250px;
+    background-color:black;
+}
+#buyuk-foto {
+    width: 400px;
+    height: 250px;
+    position:absolute;
+}
