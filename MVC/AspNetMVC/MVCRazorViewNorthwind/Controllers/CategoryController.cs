@@ -15,5 +15,20 @@ namespace MVCRazorViewNorthwind.Controllers
             List<Category> categories = db.Categories.ToList();
             return View(categories);
         }
+
+        public ActionResult Detail(int id)
+        {
+            var category = db.Categories.FirstOrDefault(x => x.CategoryID == id);
+            return View(category);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var category = db.Categories.Find(id);
+            db.Categories.Remove(category);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }

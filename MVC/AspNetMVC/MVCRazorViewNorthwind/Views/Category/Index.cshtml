@@ -20,6 +20,7 @@
                         <th>ID</th>
                         <th>Kategori Adı</th>
                         <th>Açıklama</th>
+                        <th>Detay</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,10 @@
                             <td>@category.CategoryID</td>
                             <td>@category.CategoryName</td>
                             <td>@category.Description</td>
+                            <td>
+                                <a href="/Category/Detail/@category.CategoryID">Detay</a>
+                                <a href="/Category/Delete/@category.CategoryID">Delete</a>
+                            </td>
                         </tr>
                     }
                 </tbody>
