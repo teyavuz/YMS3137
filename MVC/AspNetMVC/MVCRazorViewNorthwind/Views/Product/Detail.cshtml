@@ -1,0 +1,42 @@
+﻿@model MVCRazorViewNorthwind.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container"> 
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Unit Price</th>
+                        <th>UnitStock</th>
+                        <th>UnitInOrder</th>
+                        <th>Order Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.ProductID</td>
+                        <td>@Model.ProductName</td>
+                        <td>@Model.UnitPrice</td>
+                        <td>@Model.UnitsInStock</td>
+                        <td>@Model.UnitsOnOrder</td>
+                        <td>@Model.ReorderLevel</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
