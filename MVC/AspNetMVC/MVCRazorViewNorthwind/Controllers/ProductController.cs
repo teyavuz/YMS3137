@@ -22,5 +22,16 @@ namespace MVCRazorViewNorthwind.Controllers
             return View(product);
         }
 
+        public ActionResult AddProduct()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddProduct(Product product)
+        {
+            return View();
+        }
+
     }
 }
