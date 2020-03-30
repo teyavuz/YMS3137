@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+    int sayi = 1;
+    DateTime tarih = DateTime.Now;
+    string ad = "Fatih";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Home Index Sayfası</h1>
+    </div>
+    <!-- Operatörü ile razoru aktif hale getirebiliriz.-->
+    
+    <p>@sayi.ToString()</p>
+    <span>Bugünün Tarihi: @tarih</span>
+    <span>Kullanıcı: </span> @ad
+</body>
+</html>
