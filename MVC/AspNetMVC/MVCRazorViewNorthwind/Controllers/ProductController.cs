@@ -21,7 +21,7 @@ namespace MVCRazorViewNorthwind.Controllers
             var product = db.Products.FirstOrDefault(x => x.ProductID == id);
             return View(product);
         }
-
+        //Get
         public ActionResult AddProduct()
         {
             return View();
@@ -30,6 +30,7 @@ namespace MVCRazorViewNorthwind.Controllers
         [HttpPost]
         public ActionResult AddProduct(Product product)
         {
+
             return View();
         }
 

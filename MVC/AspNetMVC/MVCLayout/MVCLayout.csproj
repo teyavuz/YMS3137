@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{81764915-F7EC-4A73-9569-C6CD66E1F5BB}</ProjectGuid>
+    <ProjectGuid>{7E164104-70E2-4C8D-86DF-AEBAE5428D7F}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCIntro</RootNamespace>
-    <AssemblyName>MVCIntro</AssemblyName>
+    <RootNamespace>MVCLayout</RootNamespace>
+    <AssemblyName>MVCLayout</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -88,31 +88,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\theme\css\shop-homepage.css" />
+    <Content Include="Content\theme\index.html" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\theme\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\theme\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\theme\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\theme\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\theme\vendor\jquery\jquery.js" />
+    <Content Include="Content\theme\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\theme\vendor\jquery\jquery.slim.js" />
+    <Content Include="Content\theme\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -122,12 +118,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\theme\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\theme\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\theme\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\theme\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\theme\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\theme\vendor\jquery\jquery.min.map" />
+    <Content Include="Content\theme\vendor\jquery\jquery.slim.min.map" />
     <None Include="packages.config" />
-    <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\AddEmployee.cshtml" />
-    <Content Include="Views\Category\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Service.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -138,7 +147,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -153,9 +161,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51666</DevelopmentServerPort>
+          <DevelopmentServerPort>51035</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51666/</IISUrl>
+          <IISUrl>http://localhost:51035/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
