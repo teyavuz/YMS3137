@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using MVCLayout.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,11 @@ namespace MVCLayout.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        NorthwindEntities db = new NorthwindEntities();
         public ActionResult Index()
         {
-            return View();
+            //Category gönderilecek.
+            return View(db.Products.ToList());
         }
 
         public ActionResult About()
