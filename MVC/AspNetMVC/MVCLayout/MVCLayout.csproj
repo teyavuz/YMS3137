@@ -213,6 +213,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Service.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\_CategoryPartial.cshtml" />
+    <Content Include="Views\Product\AddProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

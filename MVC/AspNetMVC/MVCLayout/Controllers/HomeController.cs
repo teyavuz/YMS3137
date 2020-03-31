@@ -31,5 +31,10 @@ namespace MVCLayout.Controllers
         {
             return View();
         }
+
+        public ActionResult _CategoryPartial()
+        {
+            return PartialView(db.Categories.ToList());
+        }
     }
 }

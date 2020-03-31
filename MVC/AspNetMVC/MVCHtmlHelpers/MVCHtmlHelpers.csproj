@@ -95,11 +95,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ActionController.cs" />
     <Compile Include="Controllers\ActionLinkController.cs" />
+    <Compile Include="Controllers\BeginFormController.cs" />
     <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\TextBoxController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Sehirler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -115,6 +119,10 @@
     <Content Include="Views\ActionLink\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ActionLink\Detail.cshtml" />
+    <Content Include="Views\TextBox\Index.cshtml" />
+    <Content Include="Views\TextBox\PersonDetail.cshtml" />
+    <Content Include="Views\TextBox\TextBoxFor.cshtml" />
+    <Content Include="Views\BeginForm\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -124,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

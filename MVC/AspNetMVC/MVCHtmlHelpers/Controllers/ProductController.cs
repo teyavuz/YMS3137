@@ -1,11 +1,10 @@
-﻿using MVCLayout.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MVCLayout.Controllers
+namespace MVCHtmlHelpers.Controllers
 {
     public class ProductController : Controller
     {
@@ -14,13 +13,8 @@ namespace MVCLayout.Controllers
         {
             return View();
         }
-
-        public ActionResult AddProduct()
-        {
-            return View();
-        }
         [HttpPost]
-        public ActionResult AddProduct(Product product)
+        public ActionResult AddProduct(int id)
         {
             return View();
         }

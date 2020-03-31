@@ -1,0 +1,7 @@
+﻿@model List<MVCLayout.Models.Category>
+    <div class="list-group">
+        @foreach (var category in Model)
+        {
+            <a href="#" class="list-group-item">@category.CategoryName</a>
+        }
+    </div>

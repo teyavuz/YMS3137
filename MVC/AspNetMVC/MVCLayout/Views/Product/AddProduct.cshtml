@@ -1,0 +1,21 @@
+﻿@model MVCLayout.Models.Product
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddProduct</h2>
+
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label>Ürün Adı:</label>
+                @Html.TextBoxFor(x=>x.ProductName)
+            </div>
+            <input type="submit" value="Gönder" />
+        }
+    </div>
+</div>
+

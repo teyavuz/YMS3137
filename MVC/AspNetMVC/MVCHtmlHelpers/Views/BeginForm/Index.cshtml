@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<!--1. Kullanım
+
+    NOT : 1. Kullanım'da bağlı bulunduğu Action ve Controller üzerinden haraket eder.
+-->
+
+@*@using (Html.BeginForm(new { id=1}))
+    {
+        <input type="submit" value="PostBack Yap" />
+    }*@
+
+@using (Html.BeginForm("AddProduct", "Product", new { id = 1 }, FormMethod.Post))
+{
+    <input type="submit" value="PostBack Yap" />
+}
