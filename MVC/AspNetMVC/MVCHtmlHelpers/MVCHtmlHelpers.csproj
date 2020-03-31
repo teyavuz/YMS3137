@@ -94,7 +94,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ActionController.cs" />
+    <Compile Include="Controllers\ActionLinkController.cs" />
     <Compile Include="Controllers\HelpController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -110,6 +112,9 @@
     <Content Include="Views\Action\_PartialAction.cshtml" />
     <Content Include="Views\Action\_PartialActionRoute.cshtml" />
     <Content Include="Views\Help\Help.cshtml" />
+    <Content Include="Views\ActionLink\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ActionLink\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

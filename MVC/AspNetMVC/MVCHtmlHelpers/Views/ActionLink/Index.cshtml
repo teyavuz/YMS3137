@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--
+    Html.ActionLink()
+<a href="#"></a>
+-->
+
+@Html.ActionLink("Anasayfa","Index","Home")
+
+@Html.ActionLink("Detay","Detail")
+
+<hr />
+
+@Html.ActionLink("Detay", "Detail", new { id=1})
+
+@Html.ActionLink("Anasayfa", "Index","Home",null, new { @style="color:red"})
