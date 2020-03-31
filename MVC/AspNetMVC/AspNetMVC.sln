@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCRazorViewNorthwind", "MV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCLayout", "MVCLayout\MVCLayout.csproj", "{7E164104-70E2-4C8D-86DF-AEBAE5428D7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCHtmlHelpers", "MVCHtmlHelpers\MVCHtmlHelpers.csproj", "{0A7CD78C-FCEE-4144-929C-9CAD3ECAFD39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7E164104-70E2-4C8D-86DF-AEBAE5428D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E164104-70E2-4C8D-86DF-AEBAE5428D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E164104-70E2-4C8D-86DF-AEBAE5428D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A7CD78C-FCEE-4144-929C-9CAD3ECAFD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A7CD78C-FCEE-4144-929C-9CAD3ECAFD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A7CD78C-FCEE-4144-929C-9CAD3ECAFD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A7CD78C-FCEE-4144-929C-9CAD3ECAFD39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
