@@ -11,7 +11,8 @@ namespace MVCCrud.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Shipper
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,7 @@ namespace MVCCrud.Models
         }
     
         public int ShipperID { get; set; }
+        [Required]
         public string CompanyName { get; set; }
         public string Phone { get; set; }
     
