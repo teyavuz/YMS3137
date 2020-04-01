@@ -1,9 +1,14 @@
---Bir sayfa oluşturun. sayfa içerisinde;
-	--Tablo olarak Northwind=> Product tablosunu oluşturun.
-	--Tablo olarak Northwind=> Employee tablosunu oluşturun.
+--anasayfada ürün adına tıklandığında ürünün detayına yönlendirilsin.
 
---Kategoriler için liste tanımlayın.
+--About sayfasına hakkımızda isminde bir tasarım oluşturun
 
----------------------------------------
-sayfanın header alanı içerisinde Product, category, employee,customer, order, order detail, supplier
+--Contact sayfasında bir form oluşturun.
+
+--Services menüsü içerisinde "servisler" isminde bir tasarım oluşturun.
+
+--Ürünler sayfasına yeni ürün ekleme formu
+
+--kategori sayfasına yeni kategori ekleme formu
+
+--Sipariş sayfasına siparişleri listeyen tablo
 
