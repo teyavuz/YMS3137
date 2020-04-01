@@ -1,0 +1,44 @@
+﻿@model List<Shipper>
+@{
+    ViewBag.Title = "Nakliyeci Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<div class="row">
+     <div class="panel panel-default">
+         <div class="panel-body">
+             <div class="text-right">
+                 @Html.ActionLink("Yeni Nakliyeci", "Add", null, new { @class = "btn btn-success" })
+             </div>
+             <table class="table table-striped">
+                 <thead>
+                     <tr>
+                         <th>ID</th>
+                         <th>Şirket Adı</th>
+                         <th>Telefon Numarası</th>
+                         <th>İşlem</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     @foreach (var shipper in Model)
+                     {
+                     <tr>
+                         <td>@shipper.ShipperID</td>
+                         <td>@shipper.CompanyName</td>
+                         <td>@shipper.Phone</td>
+                         <td>
+                             @*<a class="btn btn-xs btn-warning">Düzenle</a>
+                                <a class="btn btn-xs btn-danger">Sil</a>*@
+                             @Html.ActionLink("Düzenle", "Update", new { id = shipper.ShipperID }, new { @class = "btn btn-xs btn-warning" })
+                             @Html.ActionLink("Sil", "Delete", new { id = shipper.ShipperID }, new { @class = "btn btn-xs btn-danger" })
+                         </td>
+                     </tr>
+                     }
+                 </tbody>
+             </table>
+         </div>
+     </div>
+</div>
+
