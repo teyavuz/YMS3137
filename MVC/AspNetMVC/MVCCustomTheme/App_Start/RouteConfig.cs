@@ -14,10 +14,27 @@ namespace MVCCustomTheme
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               name: "Product",
+               url: "{ProductName}-p-{ProductId}",
+               defaults: new
+               {
+                   controller = "Product",
+                   action = "Details",
+                   ProductName = UrlParameter.Optional,
+                   ProductId = UrlParameter.Optional
+
+               }
+               );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+           
         }
     }
 }
+//localhost:1384/Product/Details/Chai-p-1
+//localhost:1384/Home/Index

@@ -31,5 +31,11 @@ namespace MVCCustomTheme.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(string productName, int productId)
+        {
+
+            return View(db.Products.Where(x=>x.ProductID==productId).FirstOrDefault());
+        }
     }
 }

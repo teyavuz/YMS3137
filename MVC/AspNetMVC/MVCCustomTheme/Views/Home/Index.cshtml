@@ -12,10 +12,10 @@
                 <i class="icon-user"></i>
             </div>
             <div class="value">
-                <h1 class="count">
-                    0
+                <h1 class="counts">
+                    @ViewBag.CustomerCount
                 </h1>
-                <p>New Users</p>
+                <p>Toplam Müşteri</p>
             </div>
         </section>
     </div>
@@ -25,10 +25,10 @@
                 <i class="icon-tags"></i>
             </div>
             <div class="value">
-                <h1 class=" count2">
-                    0
+                <h1 class=" counts">
+                    @ViewBag.OrderCount
                 </h1>
-                <p>Sales</p>
+                <p>Toplam Sipariş</p>
             </div>
         </section>
     </div>
@@ -38,10 +38,10 @@
                 <i class="icon-shopping-cart"></i>
             </div>
             <div class="value">
-                <h1 class=" count3">
-                    0
+                <h1 class=" counts">
+                    @ViewBag.ProductCount
                 </h1>
-                <p>New Order</p>
+                <p>Toplam Ürün</p>
             </div>
         </section>
     </div>
@@ -51,10 +51,10 @@
                 <i class="icon-bar-chart"></i>
             </div>
             <div class="value">
-                <h1 class=" count4">
-                    0
+                <h1 class="counts">
+                    @ViewBag.TotalRevenue
                 </h1>
-                <p>Total Profit</p>
+                <p>Toplam Gelir</p>
             </div>
         </section>
     </div>
@@ -81,11 +81,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                       <td class="alert alert-warning text-center">
-                           <span>Herhangi bir sipariş eklenmemiş</span>
-                       </td>
-                    </tr>
+                   @foreach (var item in (ViewBag.Orders as List<Order>))
+                   {
+                       <tr>
+                           <td>@item.OrderID</td>
+                           <td>@item.CustomerID</td>
+                           <td>@item.Employee.FirstName</td>
+                           <td>@item.Employee.LastName</td>
+                           <td>@item.OrderDate</td>
+                           <td>@item.Freight</td>
+                           <td>@item.ShipName</td>
+                           <td>@item.ShipCity</td>
+                           <td>@item.ShipCountry</td>
+                       </tr>
+                   }
                 </tbody>
             </table>
         </section>
