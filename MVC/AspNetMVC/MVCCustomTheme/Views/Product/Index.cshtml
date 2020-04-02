@@ -1,0 +1,76 @@
+﻿@model List<Product>
+@{
+    ViewBag.Title = "Ürün Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    @ViewBag.Title
+                    @Html.ActionLink("Yeni Ürün","Add",null,new { @class="btn btn-success text-right"})
+                </header>
+                <table class="table table-striped table-advance table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product Name</th>
+                            <th>Unit Price</th>
+                            <th>UnitsInStock</th>
+                            <th>Category Name</th>
+                            <th>Discontinued</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @foreach (var p in Model)
+                       {
+                        <tr>
+                            <td>@p.ProductID</td>
+                            <td>
+                                <a href="@Url.Action("Detail","Product",new { id=p.ProductID})">
+                                    @p.ProductName
+                                </a>
+                            </td>
+                            <td>@p.UnitPrice</td>
+                            <td>@p.UnitsInStock</td>
+                            @*@try
+                            {
+                                <td>@p.Category.CategoryName</td>
+                            }
+                            catch (NullReferenceException ex)
+                            {
+
+                                <td>Belirsiz</td>
+                            }*@
+                            @if (p.CategoryID == null)
+                            {
+                                <td>Belirsiz</td>
+                            }
+                            else
+                            {
+                                <td>@p.Category.CategoryName</td>
+                            }
+                            @switch (p.Discontinued)
+                                {
+                                    case true:
+                                    <td><span class="label label-success label-mini">Devam Ediyor</span></td>
+                                        break;
+                                    case false:
+                                    <td><span class="label label-danger label-mini">Durdu</span></td>
+                                    break;
+                            }
+                        <td>
+                            @Html.ActionLink("Düzenle", "Update", new { id = p.ProductID }, new { @class = "btn btn-xs btn-warning" })
+                            @Html.ActionLink("sil", "Delete", new { id = p.ProductID }, new { @class = "btn btn-xs btn-danger" })
+                        </td>
+                        </tr>
+                       }
+
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
