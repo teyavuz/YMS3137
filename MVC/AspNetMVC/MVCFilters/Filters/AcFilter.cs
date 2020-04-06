@@ -12,10 +12,22 @@ namespace MVCFilters.Filters
     {
         AppDbContext db = new AppDbContext();
         //herhangi bir class filter olarak kullanılabilmesi için FilterAttribute'den miras alması gerekmektedir.
+
+           
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
+            var user = filterContext.HttpContext.Session["login"] as AppUser;
+           
             Log log = new Log();
-            log.UserName = "admin";
+            if (user == null)
+            {
+                log.UserName = "ziyaretçi";
+            }
+            else
+            {
+                log.UserName = user.UserName;
+            }
+            
             log.LogDate = DateTime.Now;
             log.Description = log.UserName + " tarafından giriş yaptı.";
             log.ActionName = filterContext.ActionDescriptor.ActionName;
@@ -26,8 +38,18 @@ namespace MVCFilters.Filters
 
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            var user = filterContext.HttpContext.Session["login"] as AppUser;
+           
             Log log = new Log();
-            log.UserName = "admin";
+            if (user == null)
+            {
+                log.UserName = "ziyaretçi";
+            }
+            else
+            {
+                log.UserName = user.UserName;
+            }
+            
             log.LogDate = DateTime.Now;
             log.Description = log.UserName + " tarafından giriş yapılıyor.";
             log.ActionName = filterContext.ActionDescriptor.ActionName;

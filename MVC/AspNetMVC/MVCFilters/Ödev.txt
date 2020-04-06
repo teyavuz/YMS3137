@@ -1,0 +1,7 @@
+--Flatadmin içerisinde bulunan profile.html sayfasını Northwind veritabanı içerisinde oluşturacağınız AppUser olarak doldurun. kullanıcı giriş yaptıktan sonra her giriş yapan kullanıcının profil sayfasına yönlendirin.
+
+------------------------
+
+--Raporlama isminde bir sayfa oluşturun bu sayfa içerisinde oerder Detail tablosunun özellikleri listelensin. Ancak bu sayfaya istekte bulunulan her bir kullanıcının bilgileri log isimli bir tabloda saklansın.
+
+----------------------------

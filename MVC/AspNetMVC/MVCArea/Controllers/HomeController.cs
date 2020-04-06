@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MVCFilters.Filters;
 
-namespace MVCFilters.Controllers
+namespace MVCArea.Controllers
 {
     public class HomeController : Controller
     {
-        [AcFilter]
         public ActionResult Index()
         {
-            //öncesi
             return View();
-            //sonrasında
-
         }
 
         public ActionResult About()
@@ -29,11 +24,6 @@ namespace MVCFilters.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
-        [ExcFilter]
-        public ActionResult Hata()
-        {
             return View();
         }
     }

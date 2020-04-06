@@ -1,0 +1,15 @@
+﻿//Halihzırda bir Area oluşturuldu Area klasörü içerisinde 2 adet area mevcut;
+	--Member
+	--Admin
+
+//Projenin ana dizininde bulunan Models klasörü içerisinde CodeFirst olarak bir Adet AppUser ve bir adet AppUserRole isimlerinde class oluşturunç. Bu classlar veritabanında tablo haline gelecek ve ieçrisine örnek verileri doldurun.
+
+//Projenin anadizninde bulunan controllers isimli klasörde Login isminde bir kontrol oluşturarak giriş yapan kullanıcı ve o kullanıcının rolunu kontrol edin. eğer giriş yapan kullanıcı ile beraber rolü admin ise;
+	Session["admin"]
+	redirect toaction("admin")
+	member ise;
+	Session["member"]
+	redirecttoaction("member")
+	isimlerinde iki adet Session tanımlayın. tanımlanan sessionları Filter isimli klasörde bulunan AuthFilterda tanımlı Sessionlara göre karar yapısını uygulayın.
+
+-------------------------------------
