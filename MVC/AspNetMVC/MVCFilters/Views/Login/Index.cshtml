@@ -1,0 +1,32 @@
+﻿@model MVCFilters.Models.ViewModels.LoginVM
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row" style="margin-top:20px;">
+        @if (TempData["Result"] != null)
+        {
+            <div class="alert alert-danger">
+                <span>@TempData["Result"].ToString()</span>
+            </div>
+        }
+        @using (Html.BeginForm())
+        {
+            <div class="col-md-10">
+                <label>Kullanıcı Adı</label>
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control",placeholder="kullanıcı adı" })
+                @Html.ValidationMessageFor(x=>x.UserName)
+            </div>
+            <div class="col-md-10">
+                <label>Şifre</label>
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control", placeholder = "şifre", type = "password" })
+                @Html.ValidationMessageFor(x => x.Password)
+            </div>
+            <div class="col-md-10">
+                <input type="submit" value="Giriş Yap" class="btn btn-success" />
+            </div>
+        }
+    </div>
+
+

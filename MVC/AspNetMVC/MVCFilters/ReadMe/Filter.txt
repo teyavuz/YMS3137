@@ -1,0 +1,8 @@
+﻿//Filters
+
+Asp.Net MVC'de bir kullanıcının isteği uygun denetleyiciye ve eylem yöntemine yönlendirilir. Bununla birlikte bir eylem yönteminin çalıştırılmasından önce veya çalıştıktan sonra bazı mantık işlemleri yürütmek istediğimiz durumlarda Filter'ları kullanabiliriz.
+
+IAuthorizationFilter=>Yetki filitrelemeleri
+IActionFilter=> Actionları ilgilendiren filitreleme
+IExceptionFilter=> Hata filitrelemeleri
+
