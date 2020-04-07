@@ -1,0 +1,37 @@
+﻿@model MVCLogin.Models.ViewModels.LoginVM
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4" style="margin-top:25px;">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Giriş Yap
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    <div class="input-group">
+                        @Html.LabelFor(x=>x.UserName)
+                        @Html.TextBoxFor(x => x.UserName, new { @placeholder = "kullanıcı adı", @class = "form-control" })
+                    </div>
+                    <span class="text-danger">
+                        @Html.ValidationMessageFor(x => x.UserName)
+                    </span>
+                    <div class="input-group">
+                        @Html.LabelFor(x => x.Password)
+                        @Html.TextBoxFor(x => x.Password, new { @placeholder = "şifre", @class = "form-control", type = "password" })
+                    </div>
+                    <span class="text-danger">
+                        @Html.ValidationMessageFor(x => x.Password)
+                    </span>
+                    <br />
+                    <input type="submit" class="btn btn-success pull-right" value="Giriş Yap" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

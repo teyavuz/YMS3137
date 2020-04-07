@@ -1,0 +1,14 @@
+﻿@model List<MVCGrid.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @Html.Grid(Model).Columns(x =>
+{
+    x.Add(xr => xr.ProductID).Titled("Ürün ID").Sortable(true);
+    x.Add(xr => xr.ProductName).Titled("Ürün Adı").Sortable(true);
+}).WithPaging(10);
+
+</div>

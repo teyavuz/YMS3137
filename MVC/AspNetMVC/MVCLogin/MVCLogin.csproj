@@ -8,17 +8,17 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C87A1D13-1077-41D1-9B0E-EA979F2CE359}</ProjectGuid>
+    <ProjectGuid>{704232B6-D74E-4F55-8A15-B44D42F06EF1}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NorthwindArea</RootNamespace>
-    <AssemblyName>NorthwindArea</AssemblyName>
+    <RootNamespace>MVCLogin</RootNamespace>
+    <AssemblyName>MVCLogin</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44363</IISExpressSSLPort>
+    <IISExpressSSLPort>44343</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -55,8 +55,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -128,52 +126,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Message.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Photo.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PhotoComment.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserDetail.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WallNote.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\WallNoteComment.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AppUser.cs" />
+    <Compile Include="Models\Context\AppDbContext.cs" />
+    <Compile Include="Models\ViewModels\LoginVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -181,108 +142,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\SBAdmin\dist\401.html" />
-    <Content Include="Content\SBAdmin\dist\404.html" />
-    <Content Include="Content\SBAdmin\dist\500.html" />
-    <Content Include="Content\SBAdmin\dist\assets\demo\chart-area-demo.js" />
-    <Content Include="Content\SBAdmin\dist\assets\demo\chart-bar-demo.js" />
-    <Content Include="Content\SBAdmin\dist\assets\demo\chart-pie-demo.js" />
-    <Content Include="Content\SBAdmin\dist\assets\demo\datatables-demo.js" />
-    <Content Include="Content\SBAdmin\dist\assets\img\error-404-monochrome.svg" />
-    <Content Include="Content\SBAdmin\dist\charts.html" />
-    <Content Include="Content\SBAdmin\dist\css\styles.css" />
-    <Content Include="Content\SBAdmin\dist\index.html" />
-    <Content Include="Content\SBAdmin\dist\js\scripts.js" />
-    <Content Include="Content\SBAdmin\dist\layout-sidenav-light.html" />
-    <Content Include="Content\SBAdmin\dist\layout-static.html" />
-    <Content Include="Content\SBAdmin\dist\login.html" />
-    <Content Include="Content\SBAdmin\dist\password.html" />
-    <Content Include="Content\SBAdmin\dist\register.html" />
-    <Content Include="Content\SBAdmin\dist\tables.html" />
-    <Content Include="Content\SBAdmin\index.html" />
-    <Content Include="Content\SBAdmin\scripts\build-assets.js" />
-    <Content Include="Content\SBAdmin\scripts\build-pug.js" />
-    <Content Include="Content\SBAdmin\scripts\build-scripts.js" />
-    <Content Include="Content\SBAdmin\scripts\build-scss.js" />
-    <Content Include="Content\SBAdmin\scripts\clean.js" />
-    <Content Include="Content\SBAdmin\scripts\render-assets.js" />
-    <Content Include="Content\SBAdmin\scripts\render-pug.js" />
-    <Content Include="Content\SBAdmin\scripts\render-scripts.js" />
-    <Content Include="Content\SBAdmin\scripts\render-scss.js" />
-    <Content Include="Content\SBAdmin\scripts\sb-watch.js" />
-    <Content Include="Content\SBAdmin\scripts\start-debug.js" />
-    <Content Include="Content\SBAdmin\scripts\start.js" />
-    <Content Include="Content\SBAdmin\src\assets\demo\chart-area-demo.js" />
-    <Content Include="Content\SBAdmin\src\assets\demo\chart-bar-demo.js" />
-    <Content Include="Content\SBAdmin\src\assets\demo\chart-pie-demo.js" />
-    <Content Include="Content\SBAdmin\src\assets\demo\datatables-demo.js" />
-    <Content Include="Content\SBAdmin\src\assets\img\error-404-monochrome.svg" />
-    <Content Include="Content\SBAdmin\src\js\scripts.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\authentication.pug" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\dashboard.pug" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\error.pug" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\includes\footer.pug" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\includes\head\css.pug" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\includes\head\icons.pug" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\includes\head\meta.pug" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\includes\head\title.pug" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\includes\navigation\sidenav.pug" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\includes\navigation\topnav.pug" />
-    <Content Include="Content\SBAdmin\src\pug\layouts\includes\scripts.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\401.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\404.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\500.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\charts.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\includes\datatable.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\includes\page-header.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\index.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\layout-sidenav-light.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\layout-static.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\login.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\password.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\register.pug" />
-    <Content Include="Content\SBAdmin\src\pug\pages\tables.pug" />
-    <Content Include="Content\SBAdmin\src\scss\layout\_authentication.scss" />
-    <Content Include="Content\SBAdmin\src\scss\layout\_dashboard-default.scss" />
-    <Content Include="Content\SBAdmin\src\scss\layout\_dashboard-fixed.scss" />
-    <Content Include="Content\SBAdmin\src\scss\layout\_error.scss" />
-    <Content Include="Content\SBAdmin\src\scss\navigation\sidenav\_sidenav-dark.scss" />
-    <Content Include="Content\SBAdmin\src\scss\navigation\sidenav\_sidenav-light.scss" />
-    <Content Include="Content\SBAdmin\src\scss\navigation\sidenav\_sidenav.scss" />
-    <Content Include="Content\SBAdmin\src\scss\navigation\_nav.scss" />
-    <Content Include="Content\SBAdmin\src\scss\navigation\_topnav.scss" />
-    <Content Include="Content\SBAdmin\src\scss\styles.scss" />
-    <Content Include="Content\SBAdmin\src\scss\variables\_navigation.scss" />
-    <Content Include="Content\SBAdmin\src\scss\variables\_spacing.scss" />
-    <Content Include="Content\SBAdmin\src\scss\_global.scss" />
-    <Content Include="Content\SBAdmin\src\scss\_variables.scss" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <Content Include="Areas\Admin\Views\User\Details.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -308,10 +173,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -327,7 +193,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <ProjectReference Include="..\MVCFilters\MVCFilters.csproj">
+      <Project>{76C1396D-832B-4692-8723-959D42EBD574}</Project>
+      <Name>MVCFilters</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -345,9 +214,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54646</DevelopmentServerPort>
+          <DevelopmentServerPort>55657</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44363/</IISUrl>
+          <IISUrl>https://localhost:44343/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
