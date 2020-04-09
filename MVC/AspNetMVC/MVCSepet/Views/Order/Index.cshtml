@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @if (TempData["order"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["order"]
+        </div>
+    }
+</div>
+

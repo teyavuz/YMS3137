@@ -1,0 +1,41 @@
+﻿@model List<Order>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Son Siparişler</h4>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Sipariş ID</th>
+                        <th>Ad</th>
+                        <th>Soyad</th>
+                        <th>Adres</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td>@order.OrderID</td>
+                            <td>@order.FirstName</td>
+                            <td>@order.LastName</td>
+                            <td>@order.ShipAddress</td>
+                            <td>
+                                @Html.ActionLink("Siparişi Tamamla", "OrderComplete", new { id = order.OrderID }, new { @class="btn btn-primary"})
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

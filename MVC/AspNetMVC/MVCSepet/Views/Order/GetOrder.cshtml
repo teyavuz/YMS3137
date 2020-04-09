@@ -1,0 +1,107 @@
+﻿@model Order
+@{
+    ViewBag.Title = "GetOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var cart = Session["scart"] as Cart;
+    
+
+}
+
+    <div class="row" style="margin-top:50px;">
+        <div class="col-lg-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>Sipariş Bilgileri</h4>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" method="post">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Ad</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", placeholder = "ad girin" })
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Soyad</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", placeholder = "Soyad girin" })
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Kargo Ücreti</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(x => x.Freight, new { @class="form-control",@readonly = "readonly"})
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Adres Adı</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(x => x.ShipAddress, new { @class = "form-control", placeholder = "Adres ad girin" })
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Şehir</label>
+                            <div class="col-sm-10">
+                                @Html.TextBoxFor(x => x.ShipCity, new { @class = "form-control", placeholder = "İl adı" })
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <label>Toplam Ödenecek Tutar: <b>155</b></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">Sipariş Ver</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+           <div class="panel panel-primary">
+               <div class="panel-heading">
+                   <h2>Sepet Bilgileri</h2>
+               </div>
+               <div class="panel-body">
+                   @if (cart == null)
+                   {
+                       <div class="alert alert-warning">
+                           <span>Sepetiniz şu an boş. Lütfen bir ürün ekleyiniz.</span>
+                       </div>
+                   }
+                   else
+                   {
+                        <table class="table table-striped">
+                              <thead>
+                                  <tr>
+                                      <th>Ürün Adı</th>
+                                      <th>Adet</th>
+                                      <th>Fiyat</th>
+                                      <th>Ara Toplam</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  @foreach (var c in cart.myCart)
+                                  {
+                                      <tr>
+                                          <td>@c.Name</td>
+                                          <td>@c.Quantity</td>
+                                          <td>@c.Price</td>
+                                          <td>@c.SubTotal</td>
+                                      </tr>
+                                  }
+                              </tbody>
+                          </table>
+                      
+                   }
+               </div>
+           </div>
+        </div>
+    </div>
+

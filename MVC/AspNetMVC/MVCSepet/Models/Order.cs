@@ -34,6 +34,8 @@ namespace MVCSepet.Models
         public string ShipRegion { get; set; }
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }
