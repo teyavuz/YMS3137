@@ -15,5 +15,27 @@ namespace MVCSepet.Areas.Admin.Controllers
             var orders = db.Orders.Where(x => x.CustomerID == null & x.Employee == null).OrderByDescending(x=>x.OrderID).ToList();
             return View(orders);
         }
+
+        public ActionResult OrderComplete(int id)
+        {
+
+            Order order = db.Orders.Find(id);
+           
+            Cart cart = Session["scart"] as Cart;
+            Order_Detail order_Detail = new Order_Detail();
+      
+            foreach (var c in cart.myCart)
+            {
+                order_Detail.OrderID = id;
+                order_Detail.ProductID = c.ID;
+                order_Detail.Quantity = c.Quantity;
+                order_Detail.UnitPrice = c.Price;
+                db.Order_Details.Add(order_Detail);
+                db.SaveChanges();
+            }
+           
+            return View();
+        }
+
     }
 }

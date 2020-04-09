@@ -14,7 +14,7 @@ namespace MVCSepet.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public short Quantity { get; set; }
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
         public decimal? SubTotal
         {
             get
