@@ -1,0 +1,20 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table border="1">
+    <tr>
+        <th>Kategori Id</th>
+        <th>Kategori Adı</th>
+    </tr>
+    @foreach (var kategori in Model)
+    {
+        <tr>
+            <td>@kategori.CategoryID</td>
+            <td>@kategori.CategoryName</td>
+        </tr>
+    }
+</table>
+

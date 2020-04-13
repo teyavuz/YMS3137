@@ -27,7 +27,10 @@ namespace MVCSepet.Areas.Admin.Controllers
             foreach (var c in cart.myCart)
             {
                 order_Detail.OrderID = id;
-                order_Detail.ProductID = c.ID;
+                if (db.Order_Details.Any(x => x.ProductID == c.ID))
+                {
+                    order_Detail.Quantity++;
+                }
                 order_Detail.Quantity = c.Quantity;
                 order_Detail.UnitPrice = c.Price;
                 db.Order_Details.Add(order_Detail);
