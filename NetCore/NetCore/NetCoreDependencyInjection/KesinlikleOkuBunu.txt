@@ -1,0 +1,15 @@
+﻿-- //Dependency Injection Solid prensiplerinden birini temsil eden Dependency inversion (Bağımlılığı Tersine Çevirme) prensibini uygulamak amacıyla kullanılan bir design patterndir. Dependency bağımlılık anlamına gelmektedir. Bir işin yapılması için o iş ile ilgili bağımlılıkları temsil eder.
+
+//Projemiz içerisinde kullanacağımız varlıklarımızı (Entityler) oluşturduktan sonra bu entityleri kullanmak için daha önce öğrenmiş olduğumuz interface yapısı ile kurallarımızı belirleyebilmek için Abstract isminde bir klasör oluşturuldu.
+
+//Entity klasörü içerisinde tanımlı olan Category isimli entity'nin bir takım kurallarını (Ekleme, silme, güncelleme, listeleme) Abstract içerisinde ICategoryRepository isminde bir interface oluşturarak tanımlıyoruz. (Projede sadece listeleme yapıldı)
+
+//Abstract içerisinde tanımlı olan ICategoryRepository interface içerisindeki yapıları Repository isminde oluşturmuş olduğumuz klasör içerisindeki CategoryRepository içerisine implement ediyoruz. Bunu yapmamızdaki en büyük sebep 1 kural (yetenek) oluşturduktan aynı kural (yetenğini) dilediğimiz model'e entegre edebilmek için.
+
+//yukarıda gerçekleştirilen işlemleri .NetCore ile beraber kullanılan Dependency İnjection mantığı ile beraber StartUp.cs içerisinde bulunan servisleere eklememiz gerekmektedir. Aslında yukarıdaki işlemlerle beraber bir servis oluşturmuş bulunmaktayız. Ancak bu servislerin kullanımı esnasında istemci tarafından yapılan her bir istekle beraber 1 instance mı yoksa her isteğe istinaden farklı instancelar mı alınacağını da 
+		//AddTransiet
+		//AddScoped
+		//AddSingleton
+
+		yapılarından birini kullanarak servise dahil etmemiz gerekmektedir.
+//CategoryController içerisinde constructor tarafında ilk etapta kullanılacak olan yeteneği (interface) tanımlayarak bu interface ile teslim edilen modeli içerisinden dilediğimiz gibi dilediğimiz Actionlarda kullanabilmekteyiz.

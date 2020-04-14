@@ -1,0 +1,15 @@
+﻿@model List<NetCoreDependencyInjection.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div>
+   <ul>
+       @foreach (var item in Model)
+       {
+           <li>@item.ProductName</li>
+       }
+   </ul>
+</div>
