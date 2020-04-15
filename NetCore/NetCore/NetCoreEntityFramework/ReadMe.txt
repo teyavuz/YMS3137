@@ -1,0 +1,2 @@
+﻿//bir önceki örneğimizde dependency injection yönetimini kullnarak IProductRepository yapısını oluşturmuştuk. Oluşturmuş olduğumuz bu yapı içerisinde gerçekleştirilen işlemleri esnelik sağlayacak bir yapı şeklinde tanımlamıştık. Amacımız; ProudctRepository içerisinde bir liste olarak tutulan veri yerine veritabanımız üzsereinden Entityframework ile veri getiren bir oluşturmak ve kaynak koda müdahele etmeden veri listeleme işlemlerini EF ile halletmeye çalışacağız.
+

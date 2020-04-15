@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--Projeye statik bağımlılıklar dahil etmek isterseniz (bootstrap,jquery vs...) projeye sağ tıklayarak sırasoyla;
+    Add=>Client Side Library
+    seçeneği üzerinden dilediğiniz kütüphaneyi wwwroot içerisine yükleyebilirsiniz.
+    -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+    <!--css-->
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <!--js-->
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>
