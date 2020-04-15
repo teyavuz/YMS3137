@@ -9,7 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NetCoreEntityFramework.Models.Context;
 using Microsoft.EntityFrameworkCore;
-
+using NetCoreEntityFramework.Models.Abstract;
+using NetCoreEntityFramework.Models.Repository;
 
 namespace NetCoreEntityFramework
 {
@@ -28,6 +29,9 @@ namespace NetCoreEntityFramework
             //dotnet ef migrations add initialMigration 
             //dotnet ef database update komutunu kullanrak veritabanýný oluþturuyoruz.
             //yukarýdaki komutu yazýp migration'ý aktif hale getirmeliyiz.
+
+            //Dependenct Injection
+            services.AddTransient<IProductRepository, ProductRepository>();
         }
 
 
@@ -41,7 +45,7 @@ namespace NetCoreEntityFramework
             app.UseRouting();
             //pipeline'a MVC varsayýlan route tanýmlamasýný gerçekleþtiriyoruz.
             app.UseMvcWithDefaultRoute();
-
+          
             //wwwroot klasörünü eriþe açmak için
             app.UseStaticFiles();
 

@@ -1,0 +1,16 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h2>@Model.ProductName</h2>
+    </div>
+    <div class="card-body">
+        <span>@Model.ID</span>
+        <span>@Model.UnitPrice</span>
+    </div>
+</div>
+

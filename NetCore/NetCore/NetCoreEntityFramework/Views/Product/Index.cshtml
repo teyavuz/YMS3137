@@ -1,0 +1,43 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        <span>@TempData["success"]</span>
+    </div>
+}
+else if (TempData["error"] != null)
+{
+    <div class="alert alert-danger">
+        <span>@TempData["error"]</span>
+    </div>
+}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Stock</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ID</td>
+                <td>@product.ProductName</td>
+                <td>@product.UnitPrice</td>
+                <td>@product.Stock</td>
+                <td>
+                    <a asp-action="Details" asp-controller="Product" asp-route-id="@product.ID" class="btn btn-xs btn-primary">Detail</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
