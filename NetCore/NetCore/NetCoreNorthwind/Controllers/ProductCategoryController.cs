@@ -23,5 +23,11 @@ namespace NetCoreNorthwind.Controllers
             productCategoryVM.Categories = northwindContext.Categories.ToList();
             return View(productCategoryVM);
         }
+
+        public IActionResult ProductsWithCategory(int id)
+        {
+            var products = northwindContext.Products.Where(x => x.CategoryId == id).ToList();
+            return View(products);
+        }
     }
 }

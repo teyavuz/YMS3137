@@ -9,7 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NetCoreNorthwind.Models.Context;
+using NetCoreNorthwind.BLL.Abstract;
+using NetCoreNorthwind.BLL.Repository;
+using NetCoreNorthwind.DAL.Model.Context;
 
 namespace NetCoreNorthwind
 {
@@ -26,10 +28,9 @@ namespace NetCoreNorthwind
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //services.AddDbContext<NorthwindContext>(x => x.UseSqlServer("server=.;database=northwind;uid=sa;pwd=123"));
-            services.AddDbContext<NorthwindContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc(x => x.EnableEndpointRouting = false);
-
+            services.AddDbContext<NorthwindContext>(x => x.UseSqlServer("server=.;database=northwind;uid=sa;pwd=123"));
+            services.AddTransient<IProductRepository, ProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,12 +52,25 @@ namespace NetCoreNorthwind
             app.UseRouting();
 
             app.UseAuthorization();
-          
-            app.UseEndpoints(endpoints =>
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Home}/{action=Index}/{id?}");
+            //});
+
+            app.UseMvc(routes =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                //Projemizde area kullandýðýmýz zaman area'nýn yolunu routes'a eklememiz gerekmektedir.
+                routes.MapRoute(
+                  name: "areas",
+                  template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+                routes.MapRoute(
+                 name: "default",
+                 template: "{controller=Home}/{action=Index}/{id?}"
+               );
             });
         }
     }

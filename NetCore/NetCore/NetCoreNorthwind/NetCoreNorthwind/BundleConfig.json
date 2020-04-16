@@ -1,0 +1,22 @@
+//bundleconfig kullanabilmek için Extensions yolu içerisinde bulunan Manage Extensions içerisinde Online olarak Bundles&Minifier eklentisinin yüklü olmasý gerekir. o yüzden aram çubuðuna minifier yazdýðýmýza karþýmýza gelecektir.
+
+[
+  {
+    "outputFileName": "wwwroot/bundle/css/bundle.min.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "wwwroot/css/site.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "commentMode": "none"
+    }
+  },
+  {
+    "outputFileName": "wwwroot/bundle/js/bundle.js",
+    "inputFiles": [
+      "wwwroot/js/site.js",
+      "wwwroot/lib/jquery/dist/jquery.js"
+    ]
+  }
+]

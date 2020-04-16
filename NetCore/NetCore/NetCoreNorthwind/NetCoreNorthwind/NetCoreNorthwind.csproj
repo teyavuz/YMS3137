@@ -15,7 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NetCoreIntroduction\NetCoreIntroduction.csproj" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetCoreNorthwind.BLL\NetCoreNorthwind.BLL.csproj" />
+    <ProjectReference Include="..\NetCoreNorthwind.DAL\NetCoreNorthwind.DAL.csproj" />
   </ItemGroup>
 
 

@@ -1,0 +1,35 @@
+﻿@model List<Products>
+@{
+    ViewData["Title"] = "ProductsWithCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row">
+        <div class="card">
+            <div class="card-header">
+                <h2>Product List</h2>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Unit Price</th>
+                            <th>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var products in Model)
+                        {
+                            <tr>
+                                <td>@products.ProductName</td>
+                                <td>@products.UnitPrice</td>
+                                <td>@products.UnitsInStock</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
