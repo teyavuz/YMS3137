@@ -1,0 +1,21 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h2>@Model.ProductName</h2>
+    </div>
+    <form asp-action="Delete" asp-controller="Product" method="post">
+        <div class="card-body">
+            <p>@Model.ProductName silmek istediğinize emin misiniz?</p>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Evet</button>
+            <a asp-action="Index" asp-controller="Product" class="btn">İptal</a>
+        </div>
+    </form>
+</div>
+

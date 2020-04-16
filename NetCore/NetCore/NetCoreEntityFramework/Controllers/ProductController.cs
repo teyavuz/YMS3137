@@ -45,5 +45,46 @@ namespace NetCoreEntityFramework.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        //update
+        public IActionResult Update(int id)//3
+        {
+           Product updated= productRepository.GetByID(id);
+            return View(updated);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Product model)
+        {
+           bool state= productRepository.Update(model);
+            if (state)
+            {
+                TempData["success"] = $"{model.ProductName} updated successfully!";
+            }
+            else
+            {
+                TempData["error"] = "an error occurred!";
+            }
+            return RedirectToAction("Index");
+        }
+        public IActionResult Delete(int id )
+        {
+            Product product = productRepository.GetByID(id);
+            return View(product);
+        }
+        [HttpPost]
+        public IActionResult Delete(Product product)
+        {
+            bool state = productRepository.Delete(product.ID);
+            if (state)
+            {
+                TempData["success"] = $" deleted successfully!";
+            }
+            else
+            {
+                TempData["error"] = "an error occurred!";
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
