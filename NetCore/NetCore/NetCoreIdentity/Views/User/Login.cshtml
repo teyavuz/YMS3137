@@ -1,0 +1,29 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Giriş Yap</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Login" asp-controller="User" method="post">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="UserName"></label>
+                        <input asp-for="UserName" class="form-control" placeholder="kullanıcı adı" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" placeholder="Şifre" />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+
+

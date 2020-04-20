@@ -29,7 +29,13 @@ namespace NetCoreIdentity
             services.AddMvc(x=>x.EnableEndpointRouting=false);
             //oluþturmuþ olduðumuz Context'in instance(örneðini) AddDbContext metodunu kullanarak servis alanýnda alýyoruz. DefaultConnection olarak tanýmlanan yapý appsettins.json içerisinde gelmektedir.
             services.AddDbContext<AppDbContext>(x => x.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddIdentity<AppUser, IdentityRole>(x=> {
+                x.Password.RequireDigit = false;
+                x.Password.RequireLowercase = false;
+                x.Password.RequireUppercase = false;
+                x.Password.RequireNonAlphanumeric = false;
+                x.Password.RequiredLength = 5;
+            }).AddEntityFrameworkStores<AppDbContext>();
         }
 
      
