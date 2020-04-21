@@ -23,15 +23,25 @@
                     <tr>
                         <th>UserName</th>
                         <th>Email</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@item.UserName</td>
-                            <td>@item.Email</td>
-                        </tr>
+                    <tr>
+                        <td>@item.UserName</td>
+                        <td>@item.Email</td>
+                        <td>
+                            <a asp-action="ResetPassword" asp-controller="User" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Şifre Güncelle</a>
+                        </td>
+                        <td>
+                            <a asp-action="AssignAdminRole" asp-controller="Role" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Admin Yap</a>
+                        </td>
+                        <td>
+                            <a asp-action="AssignUserRole" asp-controller="Role" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Kullanıcı Yap</a>
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>

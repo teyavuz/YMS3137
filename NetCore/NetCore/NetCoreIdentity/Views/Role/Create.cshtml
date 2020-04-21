@@ -1,0 +1,41 @@
+﻿@model AppRole
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row mt-3">
+        <div class="col-lg-6 mx-auto">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>Rol Ekle</h2>
+                </div>
+                <div class="card-body">
+                    <div class="col-lg-12">
+                        <div asp-validation-summary="All">
+
+                        </div>
+                        <form asp-action="Create" asp-controller="Role" method="post">
+                            <div class="form-group">
+                                <label asp-for="Name"></label>
+                                <input asp-for="Name" placeholder="kullanıcı adı" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Description"></label>
+                                <input asp-for="Description" placeholder="email adresi" class="form-control" />
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button type="submit" class="btn btn-primary">Rol Oluştur</button>
+                                </div>
+                                <div class="col-lg-6">
+                                    <button asp-action="Index" asp-controller="User" class="btn float-right">İptal</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

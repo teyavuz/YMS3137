@@ -4,14 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-    <div class="card">
-        <div class="card-header">
-            <h2>Giriş Yap</h2>
-        </div>
-        <div class="card-body">
-            <form asp-action="Login" asp-controller="User" method="post">
-                <div class="col-md-6">
+<div class="row mt-3">
+    <div class="col-sm-4 mx-auto">
+        <div class="card">
+            <div class="card-header text-center">
+                <h2>Giriş Yap</h2>
+            </div>
+            <div class="card-body">
+                <form asp-action="Login" asp-controller="User" method="post">
                     <div class="form-group">
                         <label asp-for="UserName"></label>
                         <input asp-for="UserName" class="form-control" placeholder="kullanıcı adı" />
@@ -20,10 +20,17 @@
                         <label asp-for="Password"></label>
                         <input asp-for="Password" class="form-control" placeholder="Şifre" />
                     </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Giriş Yap</button>
-            </form>
+                    <div>
+                        <label class="custom-control custom-checkbox"></label>
+                        <input asp-for="IsPersistent" type="checkbox" />
+                        <label asp-for="IsPersistent"></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right">Giriş Yap</button>
+                </form>
+            </div>
         </div>
     </div>
+</div>
+    
 
 

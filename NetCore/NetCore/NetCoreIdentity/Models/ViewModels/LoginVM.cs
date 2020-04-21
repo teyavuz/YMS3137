@@ -14,5 +14,8 @@ namespace NetCoreIdentity.Models.ViewModels
         [Required(ErrorMessage = "Şifre boş geçilemez!")]
         [Display(Name = "Şifre")]
         public string Password { get; set; }
+
+        [Display(Name = "Beni Hatırla")]
+        public bool IsPersistent { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace NetCoreIdentity.Models.Context
 {
     //Bundan önceki projelerimizi DbContext sınıfından miras alarak tanımlıyorduk ancak varsayılan bir kullanıcı tablosu ile veritabanımızı oluşturmak istediğimizde IdentityDbContext<> sınıfından türetmemiz gerekmektedir. IdentityDbContext<>  generic olduğu için <> içerisine hangi kullanıcı nesnesinin özelliklerini yüklemek istiyorsak tanımlamamız gerekmektedir. 
     //IdentityDbContext<>  kullanmak için projemize Microsoft.AspNetCore.Identity.EntityFramworkCore kütüphanesini kurmamız gerekmektedir.
-    public class AppDbContext:IdentityDbContext<AppUser>
+    public class AppDbContext:IdentityDbContext<AppUser,AppRole,string>
     {
         //constructor da AppDbContext'i ram üzerine çıkarıyoruz. Fakat bu işlem StartUp.cs içerisindeki service kısmında dahil ediliyor.
 

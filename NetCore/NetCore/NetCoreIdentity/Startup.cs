@@ -29,13 +29,32 @@ namespace NetCoreIdentity
             services.AddMvc(x=>x.EnableEndpointRouting=false);
             //oluþturmuþ olduðumuz Context'in instance(örneðini) AddDbContext metodunu kullanarak servis alanýnda alýyoruz. DefaultConnection olarak tanýmlanan yapý appsettins.json içerisinde gelmektedir.
             services.AddDbContext<AppDbContext>(x => x.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<AppUser, IdentityRole>(x=> {
+            services.AddIdentity<AppUser, AppRole>(x=> {
                 x.Password.RequireDigit = false;
                 x.Password.RequireLowercase = false;
                 x.Password.RequireUppercase = false;
                 x.Password.RequireNonAlphanumeric = false;
                 x.Password.RequiredLength = 5;
             }).AddEntityFrameworkStores<AppDbContext>();
+
+            //cookie oluþturma
+            services.ConfigureApplicationCookie(x =>
+            {
+                //cookie tanýmlanmasý için giriþ panelinin yolu.
+                x.LoginPath = new PathString("/User/Login");
+                x.AccessDeniedPath = new PathString("/Auth/Index");
+                //cookie özelliklerinin tanýmlanmasý
+                x.Cookie = new CookieBuilder
+                {
+                    Name = "NetCoreIdentityCookie",
+                    HttpOnly = false,
+                    Expiration = null
+                };
+                //giriþ bilgilerinin ömrü olacak mý?
+                x.SlidingExpiration = true;
+                //ne kadar sonra bilgiler silinecek?
+                x.ExpireTimeSpan = TimeSpan.FromMinutes(2);
+            });
         }
 
      
@@ -49,6 +68,9 @@ namespace NetCoreIdentity
             app.UseRouting();
             //wwwroot klasörünü dýþarýdan eriþime açýyoruz.
             app.UseStaticFiles();
+            //Authentication
+            app.UseAuthentication();
+
             //servis tarafýnda eklemiþ olduðumuz MVC yapýsýna bir route tanýmlamasý gerçekleþtiriyoruz.
             app.UseMvc(routes=>{
                 routes.MapRoute(

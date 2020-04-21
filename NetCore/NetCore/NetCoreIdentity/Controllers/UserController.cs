@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;//UserManager
 using Microsoft.AspNetCore.Mvc;
 using NetCoreIdentity.Models.Entity;
@@ -57,8 +58,9 @@ namespace NetCoreIdentity.Controllers
             return View();
         }
 
-        public IActionResult Login()
+        public IActionResult Login(string ReturnUrl)
         {
+            TempData["url"] = ReturnUrl;
             return View();
         }
         [HttpPost]
@@ -71,19 +73,74 @@ namespace NetCoreIdentity.Controllers
                 {
                     await signInManager.SignOutAsync();
 
-                    var result = await signInManager.PasswordSignInAsync(user, appUserVM.Password, false, false);
+                    var result = await signInManager.PasswordSignInAsync(user, appUserVM.Password, appUserVM.IsPersistent, false);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Profile", user);
+                        return Redirect(TempData["url"].ToString());
                     }
                 }
             }
             return View();
         }
 
-        public IActionResult Profile(AppUser user)
+        public async Task<ActionResult> ResetPassword(string id)
         {
-            return View(user);
+            if (id != null)
+            {
+                var user =await userManager.FindByIdAsync(id);
+                if (user != null)
+                {
+                   await userManager.UpdateSecurityStampAsync(user);
+                    await signInManager.SignOutAsync();
+                    await signInManager.SignInAsync(user, true);
+                    ResetPasswordVM resetPasswordVM = new ResetPasswordVM()
+                    {
+                        UserName = user.UserName,
+                        Email = user.Email
+                    };
+
+                    return View(resetPasswordVM);
+                }
+            }
+            return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(ResetPasswordVM resetPasswordVM)
+        {
+            if (ModelState.IsValid)
+            {
+                //modelde yakaladığımız reserPassword içerisindeki username veritabanında var mı yok mu kontrol ederek user içerisine bilgileri alıyoruz.
+                AppUser user = await userManager.FindByNameAsync(resetPasswordVM.UserName);
+                if (user != null)
+                {
+                    //kullanıcı dolu olarak geldiyse kullanmış olduğu şifre veritabanındaki şifre ile aynı mı?
+                    if(await userManager.CheckPasswordAsync(user, resetPasswordVM.OldPassword))
+                    {
+                        //resetPasswordVM içerisinde yakalamış olduğumuz yeni şifreyi kullanıcının eski şifresi ile değiştiriyoruz.
+                        var result = await userManager.ChangePasswordAsync(user, resetPasswordVM.OldPassword, resetPasswordVM.NewPassword);
+                        if (result.Succeeded)
+                        {
+                            await userManager.UpdateSecurityStampAsync(user);
+                            await signInManager.SignOutAsync();
+                            await signInManager.SignInAsync(user, true);
+                            return RedirectToAction("Index");
+                        }
+                    }
+                }
+            }
+            return View();
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+           await signInManager.SignOutAsync();
+            return RedirectToAction("Index");
+        }
+        [Authorize]
+        public IActionResult Profile()
+        {
+            return View();
         }
     }
 }

@@ -24,6 +24,7 @@ namespace NetCoreIdentity.Models.ViewModels
         [Display(Name = "Şifre Tekrar")]
         [Compare("Password",ErrorMessage ="Şifreler aynı değil")]
         public string ConfirmPassword { get; set; }
+        
 
     }
 }
