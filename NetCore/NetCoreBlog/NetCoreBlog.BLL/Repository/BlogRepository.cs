@@ -25,24 +25,37 @@ namespace NetCoreBlog.BLL.Repository
 
         }
 
-        public bool DeleteBlog(int id)
+        public bool DeleteBlog(int id)//10
         {
-            
+           Blog blog= context.Blogs.Find(id);
+            context.Blogs.Remove(blog);
+            if (context.SaveChanges() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         public IQueryable<Blog> GetBlogs()
         {
-         
+            return context.Blogs;
         }
 
-        public Blog GetById(int id)
+        public Blog GetById(int id)//2
         {
-           
+           return context.Blogs.Find(id);//2
         }
 
-        public bool UpdateBlog(Blog blog)
+        public bool UpdateBlog(Blog blog)//a - b
         {
-          
+            context.Entry(blog).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            if (context.SaveChanges() > 0)
+                return true;
+            return false;
         }
     }
 }
