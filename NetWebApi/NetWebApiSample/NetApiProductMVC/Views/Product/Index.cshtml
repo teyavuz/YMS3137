@@ -10,12 +10,26 @@
             <h2>Ürün Listesi</h2>
         </div>
         <div class="panel-body">
-            <input type="button" class="btn btn-primary" id="getproducts" value="Ürünleri Getir" />
-            <input type="button" class="btn btn-default" id="clear" value="Temizle" />
-            <br />
-            <ul class="list-group" id="productlist">
-
-            </ul>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Kullanıcı Adı</label>
+                        <input type="text" class="form-control" id="username" />
+                    </div>
+                    <div class="form-group">
+                        <label>Şifre</label>
+                        <input type="text" class="form-control" id="password" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <input type="button" class="btn btn-primary" id="getproducts" value="Ürünleri Getir" />
+                    <input type="button" class="btn btn-default" id="clear" value="Temizle" />
+                    <br />
+                    <ul class="list-group" id="productlist">
+                    </ul>
+                </div>
+            </div>
+           
         </div>
     </div>
 </div>
@@ -25,18 +39,32 @@
         $(document).ready(function () {
             
             var ul = $("#productlist");
+           
             $("#getproducts").click(function () {
-               //alert(1)
+
+                var username = $("#username").val();
+                 var password = $("#password").val();
+               console.log(username+" "+password)
                 $.ajax({
                     type: "Get",
                     //url:"https://jsonplaceholder.typicode.com/todos",
                     url: "https://localhost:44356/api/product",
+                    dataType:"json",
+                    headers: {
+                        "Authorization" : "Basic "+btoa(username+':'+password)
+                    },
                     success: function (data) {
                         ul.empty();
                         $.each(data, function (index, val) {
-                            var li = "<li class='list-group-item'>" + val.ProductName + "</li>"
+                            var li = "<li class='list-group-item'>" + val.ProductName + " <button class='btn'>Sil</button> </li>"
                             ul.append(li);
                         })
+                    },
+                    complete: function (response) {
+                        if (response.status == "401") {
+                            ul.empty();
+                            ul.append("<li class='alert alert-danger'>"+response.status+" bu veriyi görüntülemeye yetkiniz bulunmamaktadır.</li>")
+                        }
                     }
                 })
             })

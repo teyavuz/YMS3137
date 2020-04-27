@@ -31,6 +31,19 @@
                     context.Products.Add(p);
                 }
             }
+
+            if (!context.AppUsers.Any())
+            {
+                List<AppUser> users = new List<AppUser>()
+                {
+                    new AppUser{UserName="admin",Password="1234"}
+                };
+
+                foreach (var u in users)
+                {
+                    context.AppUsers.Add(u);
+                }
+            }
         }
     }
 }

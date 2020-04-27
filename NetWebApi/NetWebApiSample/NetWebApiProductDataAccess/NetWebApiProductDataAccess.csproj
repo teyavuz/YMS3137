@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context\AppDbContext.cs" />
+    <Compile Include="Models\Entity\AppUser.cs" />
     <Compile Include="Models\Entity\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

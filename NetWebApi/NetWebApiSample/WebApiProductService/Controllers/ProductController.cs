@@ -6,10 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebApiProductService.Filters;
 
 namespace WebApiProductService.Controllers
 {
-    [Authorize]
+    [BasicAuthFilter]
     public class ProductController : ApiController
     {
         AppDbContext db = new AppDbContext();
