@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetWebApiProductDataAccess"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiProductService", "WebApiProductService\WebApiProductService.csproj", "{14C84568-35F4-4049-A969-CB895AD82D8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetApiProductMVC", "NetApiProductMVC\NetApiProductMVC.csproj", "{054DC71B-CFA6-43CE-9D0C-0213ABBC0229}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{14C84568-35F4-4049-A969-CB895AD82D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14C84568-35F4-4049-A969-CB895AD82D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14C84568-35F4-4049-A969-CB895AD82D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{054DC71B-CFA6-43CE-9D0C-0213ABBC0229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{054DC71B-CFA6-43CE-9D0C-0213ABBC0229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{054DC71B-CFA6-43CE-9D0C-0213ABBC0229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{054DC71B-CFA6-43CE-9D0C-0213ABBC0229}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

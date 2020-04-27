@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="panel">
+        <div class="panel-heading">
+            <h2>Ürün Listesi</h2>
+        </div>
+        <div class="panel-body">
+            <input type="button" class="btn btn-primary" id="getproducts" value="Ürünleri Getir" />
+            <input type="button" class="btn btn-default" id="clear" value="Temizle" />
+            <br />
+            <ul class="list-group" id="productlist">
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            
+            var ul = $("#productlist");
+            $("#getproducts").click(function () {
+               //alert(1)
+                $.ajax({
+                    type: "Get",
+                    //url:"https://jsonplaceholder.typicode.com/todos",
+                    url: "https://localhost:44356/api/product",
+                    success: function (data) {
+                        ul.empty();
+                        $.each(data, function (index, val) {
+                            var li = "<li class='list-group-item'>" + val.ProductName + "</li>"
+                            ul.append(li);
+                        })
+                    }
+                })
+            })
+        })
+    </script>
+    
+    }
+
