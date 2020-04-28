@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2>Çalışanlar</h2>
+                    <button class="btn btn-primary pull-right" id="getemployee">Çalışanları Listele</button>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employeeBody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            if (sessionStorage.getItem('accessToken') == null) {
+                window.location.href = 'Login.html';
+            }
+            $("#getemployee").click(function () {
+                $("#employeeBody").empty();
+                $.ajax({
+                    method: 'Get',
+                    url: '/api/employee',
+                    contentType:'application/json',
+                    headers: {
+                        "Authorization":"Bearer "+sessionStorage.getItem('accessToken')
+                    },
+                    
+                    success: function (data) {
+                        console.log(data)
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

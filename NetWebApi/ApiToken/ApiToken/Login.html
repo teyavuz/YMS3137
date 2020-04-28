@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2>Kullanıcı Kayıt Sayfası</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" id="email" class="form-control" placeholder="Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Şifre</label>
+                            <input type="text" id="password" class="form-control" placeholder="Şifre" />
+                        </div>
+                        <button class="btn btn-primary" id="login">Giriş Yap</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#login").click(function () {
+                $.ajax({
+                    method: 'Post',
+                    url: "https://localhost:44377/token",
+                    data: {
+                        UserName: $("#email").val(),
+                        Password: $('#password').val(),
+                        grant_type:'password'
+                    },
+                    success: function (response) {
+                        console.log(response)
+                        sessionStorage.setItem('accessToken', response.access_token)
+                        window.location.href="/Employee.html"
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>
