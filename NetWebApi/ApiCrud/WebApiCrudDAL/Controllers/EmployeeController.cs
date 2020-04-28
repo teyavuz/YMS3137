@@ -26,7 +26,7 @@ namespace WebApiCrudDAL.Controllers
                 Country = x.Country
             }).ToList();
         }
-
+        [HttpPost]
         public IHttpActionResult AddEmployee(Employee model)
         {
             db.Employees.Add(model);
@@ -40,7 +40,7 @@ namespace WebApiCrudDAL.Controllers
             db.SaveChanges();
             return Ok(GetEmployees());
         }
-
+        [HttpPut]
         public IHttpActionResult Update(Employee employee)
         {
             Employee updated = db.Employees.Find(employee.EmployeeID);
