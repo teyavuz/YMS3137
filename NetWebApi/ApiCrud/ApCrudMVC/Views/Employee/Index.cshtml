@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <input type="button" value="Çalışanları Getir" class="btn btn-primary" id="btnEmployees" />
+        </div>
+        <div class="panel panel-body">
+            <table class="table table-bordered" id="tblEmployees">
+               <thead>
+                   <tr>
+                       <th>FirstName</th>
+                       <th>LastName</th>
+                       <th>Title</th>
+                       <th>City</th>
+                       <th>Country</th>
+                       <th></th>
+                   </tr>
+               </thead>
+              <!--Buraya tbody jquery içerisinden gönderilecek.-->
+                <tbody id="tblBody">
+                    <tr>
+                        <td>Fatih</td>
+                        <td>Günalp</td>
+                        <td>Mr</td>
+                        <td>İstanbul</td>
+                        <td>Türkiye</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        function BringData(employeeData) {
+            $("#tblEmployees").find("tr").remove();
+            $.each(employeeData, function (index, data) {
+                $("#tblBody").append("<tr><td>"+data.FirstName+"</td><td>"+data.LastName+"</td><td>"+data.Title+"</td><td>"+data.City+"</td><td>"+data.Country+"</td><td><input value='Sil' type='button' class='btn btn-danger' id='"+data.ID+"'></td></tr>")
+           
+            })
+        }
+
+        $(function () {
+            $("#btnEmployees").click(function () {
+                $.ajax({
+                    type: "Get",
+                    url: "https://localhost:44340/api/employee",
+                    success: function (data) {
+                        //console.log(data);
+                        BringData(data);
+                    }
+                })
+            })
+        })
+
+
+    </script>
+    }

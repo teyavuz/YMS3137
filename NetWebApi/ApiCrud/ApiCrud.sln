@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiCrudDAL", "WebApiCrudDAL\WebApiCrudDAL.csproj", "{4B18074D-5CCA-465D-8B8C-AF737899CB5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApCrudMVC", "ApCrudMVC\ApCrudMVC.csproj", "{543B5E3A-3A5F-43F6-A8A2-D326C1C4B03C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B18074D-5CCA-465D-8B8C-AF737899CB5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B18074D-5CCA-465D-8B8C-AF737899CB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B18074D-5CCA-465D-8B8C-AF737899CB5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B18074D-5CCA-465D-8B8C-AF737899CB5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{543B5E3A-3A5F-43F6-A8A2-D326C1C4B03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{543B5E3A-3A5F-43F6-A8A2-D326C1C4B03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{543B5E3A-3A5F-43F6-A8A2-D326C1C4B03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{543B5E3A-3A5F-43F6-A8A2-D326C1C4B03C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAD5420D-DAA9-4FBC-87AD-3A0D315DD3D2}
+	EndGlobalSection
+EndGlobal
