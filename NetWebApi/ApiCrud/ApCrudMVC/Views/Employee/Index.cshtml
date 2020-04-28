@@ -81,7 +81,8 @@
                         <td>${data.City}</td>
                         <td>${data.Country}</td>
                         <td>
-                                <input type='button' class='btn btn-xs btn-danger' value='Sil' id="${data.ID}" />
+                             <button class='btn btn-xs btn-danger' value='sil' id="${data.ID}">Sil</button>
+                              <button class='btn btn-xs btn-warning' value='guncelle' id="${data.ID}">Güncelle</button>            
                         </td>
                      </tr>
     `)
@@ -121,6 +122,48 @@
                 }
             })
         })
+
+        //Çalışan Silme ve Güncelleme
+        $("#tblBody").on('click', 'button', function () {
+           
+            var mesaj = confirm("İşlemi yapmak istediğinize emin misiniz?");
+            var currentId = $(this).attr('id');
+            var currentValue = $(this).attr('value');
+            if (currentValue === 'sil') {
+                if (mesaj) {
+                    $.ajax({
+                        type: 'Delete',
+                        url: "https://localhost:44340/api/employee/"+currentId,
+                        success: function (data) {
+                            BringData(data)
+                        }
+                    })
+                } else {
+                    alert('işlem iptal edildi!')
+                }
+            } else {
+                if (mesaj) {
+                    $.ajax({
+                        type: 'Put',
+                        url: 'https://localhost:44340/api/employee',
+                        data: {
+                            EmployeeID:currentId,
+                                 FirstName:$("#firstName").val(),
+                                 LastName:$("#lastName").val(),
+                                 Title: $("#title").val(),
+                                  City: $("#city").val(),
+                                 Country:$("#country").val()
+                        },
+                        dataType: 'Json',
+                        success: function (data) {
+                            BringData(data);
+                        }
+                    })
+                }
+            }
+        })
+      
+    
 
     </script>
     }

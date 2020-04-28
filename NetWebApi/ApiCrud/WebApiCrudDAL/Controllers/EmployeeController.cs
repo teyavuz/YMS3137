@@ -33,7 +33,7 @@ namespace WebApiCrudDAL.Controllers
             db.SaveChanges();
             return Ok(GetEmployees());
         }
-
+        [HttpDelete]
         public IHttpActionResult RemoveEmployee(int id)
         {
             db.Employees.Remove(db.Employees.Find(id));
