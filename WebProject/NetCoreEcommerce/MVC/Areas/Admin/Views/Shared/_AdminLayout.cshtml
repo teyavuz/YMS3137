@@ -20,6 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="~/AdminLTE/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/AdminLTE/dist/css/adminlte.min.css">
+    <link href="~/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -173,7 +174,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
                             <a asp-action="Index" asp-controller="Product" class="nav-link">
@@ -224,10 +225,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-          
+
             <!-- Main content -->
             <div class="content">
-              @RenderBody()
+                @RenderBody()
             </div>
             <!-- /.content -->
         </div>
@@ -259,6 +260,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="~/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="~/AdminLTE/dist/js/adminlte.min.js"></script>
+    <script src="~/AdminLTE/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/AdminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+    @RenderSection("scripts",required:false)
 </body>
 </html>
 

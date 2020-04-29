@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover" id="category">
                     <thead>
                         <tr>
                             <th>Kategori Adı</th>
@@ -43,7 +43,14 @@
                         }
                         else
                         {
-
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.CategoryName</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.CreatedDate.Value.ToShortDateString()</td>
+                                </tr>
+                            }
                         }
                     </tbody>
                 </table>
@@ -52,3 +59,11 @@
     </div>
 </div>
 
+@section scripts{ 
+<script>
+    $(function () {
+        $("#category").DataTable();
+    })
+</script>
+
+}

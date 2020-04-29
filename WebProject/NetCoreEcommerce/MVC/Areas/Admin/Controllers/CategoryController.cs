@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.Abstract;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,10 +11,16 @@ namespace MVC.Areas.Admin.Controllers
     [Area("Admin")]
     public class CategoryController : Controller
     {
+        private readonly ICategoryService categoryService;
+
+        public CategoryController(ICategoryService categoryService)
+        {
+            this.categoryService = categoryService;
+        }
         // GET: Category
         public ActionResult Index()
         {
-            return View();
+            return View(categoryService.GetActive());
         }
 
         // GET: Category/Details/5

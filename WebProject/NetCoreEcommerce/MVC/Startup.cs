@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL.Abstract;
+using BLL.Service;
 using DAL.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +37,9 @@ namespace MVC
             services.AddControllersWithViews();
             //DbConnection
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),b => b.MigrationsAssembly("MVC")));
+
+            //Entity Services
+            services.AddScoped<ICategoryService, CategoryService>();
         }
 
       
