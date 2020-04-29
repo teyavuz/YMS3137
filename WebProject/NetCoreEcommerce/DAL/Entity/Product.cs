@@ -1,12 +1,14 @@
 ﻿using DAL.Entity.Base;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DAL.Entity
 {
     public class Product:CoreEntity
     {
+        [Column(TypeName = "decimal(18,2)")]
         public decimal? Price { get; set; }
         public short? UnitsInStock { get; set; }
         public short Quantity { get; set; }
