@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL.Abstract;
+using DAL.Entity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MVC.Areas.Admin.Controllers
 {
@@ -32,17 +34,20 @@ namespace MVC.Areas.Admin.Controllers
         // GET: Category/Create
         public ActionResult Create()
         {
+            ViewBag.MainCategories = categoryService
+                .GetDefault(x => x.MainCategory == null)
+                .Select(x => new SelectListItem() { Text = x.CategoryName, Value = x.ID.ToString() });
             return View();
         }
 
         // POST: Category/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Category category)
         {
             try
             {
-                // TODO: Add insert logic here
+                categoryService.Add(category);
 
                 return RedirectToAction(nameof(Index));
             }

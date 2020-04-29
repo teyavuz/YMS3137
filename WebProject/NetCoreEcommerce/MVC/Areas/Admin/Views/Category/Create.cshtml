@@ -31,8 +31,8 @@
                         </div>
                         <div class="form-group">
                             <label>Ana Kategori</label>
-                          <select class="form-control custom-select">
-                              <option>Lütfen Ana Kategori Seçin</option>
+                          <select asp-for="MainCategory" class="form-control custom-select" asp-items="ViewBag.MainCategories">
+                              <option selected="" disabled>Lütfen Ana Kategori Seçin</option>
                           </select>
                         </div>
                         <button type="submit" class="btn btn-success">Kategori Ekle</button>
