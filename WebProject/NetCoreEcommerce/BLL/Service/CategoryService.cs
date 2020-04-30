@@ -84,8 +84,8 @@ namespace BLL.Service
 
         public void Update(Category category)
         {
-            Category updated = GetById(category.ID);
-            context.Entry(updated).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+           
+            context.Entry(category).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
         }
     }

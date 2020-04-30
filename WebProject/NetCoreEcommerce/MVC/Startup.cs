@@ -40,6 +40,7 @@ namespace MVC
 
             //Entity Services
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
         }
 
       

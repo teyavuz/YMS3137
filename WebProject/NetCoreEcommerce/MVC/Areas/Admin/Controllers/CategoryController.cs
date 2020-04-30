@@ -34,8 +34,7 @@ namespace MVC.Areas.Admin.Controllers
         // GET: Category/Create
         public ActionResult Create()
         {
-            ViewBag.MainCategories = categoryService
-                .GetDefault(x => x.MainCategory == null)
+            ViewBag.MainCategories = categoryService.GetActive()
                 .Select(x => new SelectListItem() { Text = x.CategoryName, Value = x.ID.ToString() });
             return View();
         }
@@ -58,19 +57,21 @@ namespace MVC.Areas.Admin.Controllers
         }
 
         // GET: Category/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
-            return View();
+            ViewBag.MainCategories = categoryService.GetActive()
+                .Select(x => new SelectListItem() { Text = x.CategoryName, Value = x.ID.ToString() });
+            return View(categoryService.GetById(id));
         }
 
         // POST: Category/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Category category)
         {
             try
             {
-                // TODO: Add update logic here
+                categoryService.Update(category);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -81,19 +82,19 @@ namespace MVC.Areas.Admin.Controllers
         }
 
         // GET: Category/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
-            return View();
+            return View(categoryService.GetById(id));
         }
 
         // POST: Category/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(Category category)
         {
             try
             {
-                // TODO: Add delete logic here
+                categoryService.Remove(category);
 
                 return RedirectToAction(nameof(Index));
             }
