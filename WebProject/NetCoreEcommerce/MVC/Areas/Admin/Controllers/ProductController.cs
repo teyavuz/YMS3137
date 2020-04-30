@@ -8,6 +8,7 @@ using DAL.Entity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using MVC.Areas.Admin.Models.ViewModels;
 
 namespace MVC.Areas.Admin.Controllers
 {
@@ -25,7 +26,11 @@ namespace MVC.Areas.Admin.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            return View(productService.GetActive());
+            ProductCategoryVM productCategoryVM = new ProductCategoryVM();
+            productCategoryVM.Products = productService.GetActive();
+            productCategoryVM.Categories = categoryService.GetActive();
+            //return View(productService.GetActive());
+            return View(productCategoryVM);
         }
 
         // GET: Product/Details/5
@@ -74,20 +79,41 @@ namespace MVC.Areas.Admin.Controllers
         }
 
         // GET: Product/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
-            return View();
+            ViewBag.MainCategories = categoryService.GetActive()
+              .Select(x => new SelectListItem() { Text = x.CategoryName, Value = x.ID.ToString() });
+            return View(productService.GetById(id));
         }
 
         // POST: Product/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(Product product, IFormFile image)
         {
             try
             {
-                // TODO: Add update logic here
-
+                string path;
+                if (image == null)
+                {
+                    if (product.ImagePath != null)
+                    {
+                        productService.Update(product);
+                        return RedirectToAction(nameof(Index));
+                    }
+                    path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images\\products", "no-image.jpg");
+                    product.ImagePath = "no-image.jpg";
+                }
+                else
+                {
+                    path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images\\products", image.FileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await image.CopyToAsync(stream);
+                    }
+                    product.ImagePath = image.FileName;
+                }
+                productService.Update(product);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -97,26 +123,26 @@ namespace MVC.Areas.Admin.Controllers
         }
 
         // GET: Product/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
+            if (id != null)
+            {
+                return View(productService.GetById(id));
+                
+            }
             return View();
         }
 
         // POST: Product/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(Product product)
         {
-            try
-            {
-                // TODO: Add delete logic here
+           
+                productService.Remove(product);
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+                return RedirectToAction("Index");
+            
         }
     }
 }

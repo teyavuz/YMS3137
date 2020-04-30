@@ -1,4 +1,4 @@
-﻿@model List<Product>
+﻿@model ProductCategoryVM
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -31,7 +31,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if (Model.Count() == 0)
+                        @if (Model.Products.Count() == 0)
                         {
                             <tr>
                                 <td colspan="5">
@@ -45,13 +45,14 @@
                         }
                         else
                         {
-                            foreach (var item in Model)
+                            foreach (var item in Model.Products)
                             {
                                 <tr>
                                     <td>@item.ProductName</td>
                                     <td>@item.Price</td>
                                     <td>@item.UnitsInStock</td>
-                                    <td>@item.Category.CategoryName</td>
+                                    @*<td>@item.Category.CategoryName</td>*@
+                                    <td>@Model.Categories.Where(x=>x.ID==item.CategoryId).First().CategoryName</td>
                                     <td>
                                         <a asp-action="Edit" asp-controller="Product" asp-route-id="@item.ID" class="btn btn-sm btn-warning">Güncelle</a>
                                         <a asp-action="Delete" asp-controller="Product" asp-route-id="@item.ID" class="btn btn-sm btn-danger">Sil</a>
