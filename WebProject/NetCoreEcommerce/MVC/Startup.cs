@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BLL.Abstract;
 using BLL.Service;
 using DAL.Context;
+using DAL.Entity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -41,6 +42,14 @@ namespace MVC
             //Entity Services
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddIdentity<AppUser, AppUserRole>(x =>
+            {
+                x.Password.RequiredLength = 6;
+                x.Password.RequireDigit = false;
+                x.Password.RequireLowercase = false;
+                x.Password.RequireUppercase = false;
+                x.Password.RequireNonAlphanumeric = false;
+            }).AddEntityFrameworkStores<AppDbContext>();
         }
 
       
