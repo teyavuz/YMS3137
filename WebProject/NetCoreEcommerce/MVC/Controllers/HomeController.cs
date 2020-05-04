@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MVC.CustomHelpers;
 using MVC.Models;
+using MVC.Models.CartModel;
 
 namespace MVC.Controllers
 {
@@ -35,6 +38,22 @@ namespace MVC.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult AddToCart(Guid id)
+        {
+            
+            Cart cartSession = SessionHelper.GetProductFromJson<Cart>(HttpContext.Session, "cart") == null ? new Cart() : SessionHelper.GetProductFromJson<Cart>(HttpContext.Session, "cart");
+            var product = productService.GetById(id);
+            CartItem cartItem = new CartItem();
+            cartItem.ID = product.ID;
+            cartItem.Name = product.ProductName;
+            cartItem.Price = product.Price;
+            cartSession.AddItem(cartItem);
+            SessionHelper.SetProductJson(HttpContext.Session, "cart", cartSession);
+
+
+            return View();
         }
     }
 }

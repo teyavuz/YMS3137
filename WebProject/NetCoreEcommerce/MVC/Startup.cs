@@ -50,6 +50,26 @@ namespace MVC
                 x.Password.RequireUppercase = false;
                 x.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<AppDbContext>();
+            //cookie
+            services.ConfigureApplicationCookie(x =>
+            {
+                x.Cookie = new Microsoft.AspNetCore.Http.CookieBuilder
+                {
+                    Name = "Login",
+                    HttpOnly = false
+                   
+                };
+                x.SlidingExpiration = true;
+                x.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+            });
+
+            //session
+            services.AddSession(x =>
+            {
+                x.Cookie.Name = "Cart.Session";
+                x.IdleTimeout = TimeSpan.FromMinutes(5);
+
+            });
         }
 
       
@@ -67,10 +87,11 @@ namespace MVC
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();//kimlik doðrulama
 
             app.UseEndpoints(endpoints =>
             {

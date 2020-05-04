@@ -1,4 +1,7 @@
-﻿<!DOCTYPE HTML>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> signInManager;
+@inject  UserManager<AppUser> userManager;
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -72,11 +75,21 @@
                             <div class="widget-header icontext">
                                 <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
                                 <div class="text">
-                                    <span class="text-muted">Merhaba!</span>
-                                    <div>
-                                        <a asp-action="Login" asp-controller="Account" asp-area="Member"> Giriş Yap</a> |
-                                        <a asp-action="Register" asp-controller="Account" asp-area="Member"> Kayıt Ol</a>
-                                    </div>
+                                    @if (signInManager.IsSignedIn(User))
+                                    {
+                                        <a asp-action="Profile" asp-controller="Account" asp-area="Member" asp-route-id="@User.Identity.Name">
+                                    <span class="text-muted">Merhaba!</span> 
+                                    @User.Identity.Name</a>
+                                    }
+                                    else
+                                    {
+                                        
+                                        <div>
+                                            <a asp-action="Login" asp-controller="Account" asp-area="Member"> Giriş Yap</a> |
+                                            <a asp-action="Register" asp-controller="Account" asp-area="Member"> Kayıt Ol</a>
+                                        </div>
+                                    }
+
                                 </div>
                             </div>
 
