@@ -18,7 +18,7 @@ namespace MVC.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService productService;
 
-        public HomeController(ILogger<HomeController> logger,IProductService productService)
+        public HomeController(ILogger<HomeController> logger, IProductService productService)
         {
             _logger = logger;
             this.productService = productService;
@@ -42,18 +42,31 @@ namespace MVC.Controllers
 
         public IActionResult AddToCart(Guid id)
         {
-            
+
             Cart cartSession = SessionHelper.GetProductFromJson<Cart>(HttpContext.Session, "cart") == null ? new Cart() : SessionHelper.GetProductFromJson<Cart>(HttpContext.Session, "cart");
             var product = productService.GetById(id);
             CartItem cartItem = new CartItem();
             cartItem.ID = product.ID;
             cartItem.Name = product.ProductName;
             cartItem.Price = product.Price;
+            cartItem.ImagePath = product.ImagePath;
             cartSession.AddItem(cartItem);
             SessionHelper.SetProductJson(HttpContext.Session, "cart", cartSession);
 
 
-            return View();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult MyCart()
+        {
+            if (SessionHelper.GetProductFromJson<Cart>(HttpContext.Session, "cart") != null)
+            {
+                Cart c = SessionHelper.GetProductFromJson<Cart>(HttpContext.Session, "cart");
+                return View(c.MyCart);
+            }
+            //Todo: Sepetiniz şu an boş ibaresini ziyaretçiye gösterin.
+            return RedirectToAction("Index");
+
         }
     }
 }
