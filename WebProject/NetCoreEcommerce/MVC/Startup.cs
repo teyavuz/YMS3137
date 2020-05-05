@@ -42,6 +42,7 @@ namespace MVC
             //Entity Services
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IOrderService, OrderService>();
             services.AddIdentity<AppUser, AppUserRole>(x =>
             {
                 x.Password.RequiredLength = 6;

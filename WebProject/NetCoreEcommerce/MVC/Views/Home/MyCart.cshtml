@@ -62,17 +62,17 @@
 
             <div class="card mb-3">
                 <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label>Have coupon?</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="" placeholder="Coupon code">
-                                <span class="input-group-append">
-                                    <button class="btn btn-primary">Apply</button>
-                                </span>
-                            </div>
+
+                    <div class="form-group">
+                        <label>Have coupon?</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="" placeholder="Coupon code">
+                            <span class="input-group-append">
+                                <button class="btn btn-primary">Apply</button>
+                            </span>
                         </div>
-                    </form>
+                    </div>
+
                 </div> <!-- card-body.// -->
             </div> <!-- card.// -->
 
@@ -86,7 +86,8 @@
                     <p class="text-center mb-3">
                         <img src="../images/misc/payments.png" height="26">
                     </p>
-                    <a asp-action="CardComplete" asp-controller="Home" class="btn btn-primary btn-block"> Alışverişi Tamamla </a>
+                    <a asp-action="CompleteCart" asp-controller="Home" class="btn btn-primary btn-block"> Alışverişi Tamamla </a>
+                @*<button type="submit" class="btn btn-primary btn-block">Alışverişi Tamamla</button>*@
                     <a asp-action="Index" asp-controller="Home" class="btn btn-light btn-block">Alışverişe Devam Et</a>
                 </div> <!-- card-body.// -->
             </div> <!-- card.// -->
@@ -95,4 +96,6 @@
 
 
     </div>
+
+    
 
